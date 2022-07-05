@@ -1,8 +1,10 @@
+@use "../utils/colors.scss" as c;
+
 #contact_modal {
   display: none;
   .modal {
     border-radius: 5px;
-    background-color: #DB8876;
+    background-color: c.$salmon;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -28,7 +30,7 @@
       flex-direction: column;
       align-items: flex-start;
       label {
-        color: #312E2E;
+        color: c.$dark;
         font-size: 36px;
       }
       div {

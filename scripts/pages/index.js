@@ -16,7 +16,6 @@ async function getPhotographers() {
 async function renderPhotographers(){
     // assigne a photographers le tableau renvoyé par le "get photographers"
     let photographers = await getPhotographers();    
-
     // retourne le tableau photographers seulement une fois
     return ({
         photographers: [photographers]})

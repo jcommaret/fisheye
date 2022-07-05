@@ -1,45 +1,30 @@
 
-const api_url = "https://github.com/OpenClassrooms-Student-Center/Front-End-Fisheye/blob/main/data/photographers.json";
+// URL du json
+const api_url = "/data/photographers.json";
 
 async function getPhotographers() {
-    // Penser à remplacer par les données récupérées dans le json
-    const photographers = [
-        {
-            "name": "Data test 1",
-            "id": 1,
-            "city": "Paris",
-            "country": "France",
-            "tagline": "Ceci est ma data test",
-            "price": 400,
-            "portrait": "account.png"
-        },
-        {
-            "name": "Data test 2",
-            "id": 2,
-            "city": "Londres",
-            "country": "UK",
-            "tagline": "Ceci est ma data test 2",
-            "price": 500,
-            "portrait": "account.png"
-        },
-        {
-            "name": "Data test 3",
-            "id": 3,
-            "city": "Londres",
-            "country": "UK",
-            "tagline": "Ceci est ma data test 3",
-            "price": 500,
-            "portrait": "account.png"
-        }
-    ]
-    // et bien retourner le tableau photographers seulement une fois
+    // fetch de l'api
+    let url = api_url;
+    try {
+        let res = await fetch(url);
+        return await res.json();
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+async function renderPhotographers(){
+    // assigne a photographers le tableau renvoyé par le "get photographers"
+    let photographers = await getPhotographers();    
+
+    // retourne le tableau photographers seulement une fois
     return ({
-        photographers: [...photographers, ...photographers]})
+        photographers: [photographers]})
 }
 
 async function displayData(photographers) {
     const photographersSection = document.querySelector(".photographer_section");
-
+    
     photographers.forEach((photographer) => {
         const photographerModel = photographerFactory(photographer);
         const userCardDOM = photographerModel.getUserCardDOM();

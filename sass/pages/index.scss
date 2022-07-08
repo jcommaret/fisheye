@@ -14,10 +14,44 @@
     h2{
       color: c.$orange;
       font-size: 36px;
+      font-weight: 400;
+      text-align: center;
     }
     img {
       height: 200px;
       width: 200px;
+      border-radius: 100px;
+      &.portrait{
+        object-fit: cover;  
+      }
+      background: c.$bck-grey;
+      box-shadow: 0px 4px 12px c.$shadow-grey;
+    }
+    .location{
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 17px;
+      letter-spacing: 0em;
+      text-align: center;
+      color:c.$red;
+      margin-bottom: 3px;
+    }
+    .tagline{
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 13px;
+      letter-spacing: 0em;
+      text-align: center;
+      margin-bottom: 3px;
+    }
+    .rate{
+      font-family: DM Sans;
+      font-size: 9px;
+      font-weight: 400;
+      line-height: 12px;
+      letter-spacing: 0em;
+      text-align: center;
+      color:c.$grey;
     }
   }
 }

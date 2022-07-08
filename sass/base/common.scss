@@ -1,6 +1,12 @@
 @use "../utils/fonts.scss" as f;
 @use "../utils/colors.scss" as c;
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: f.$dm-sans;
   margin: 0;

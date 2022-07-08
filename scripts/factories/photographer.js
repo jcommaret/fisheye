@@ -1,34 +1,40 @@
+
 function photographerFactory(data) {
     const { id, name, city, country, portrait, tagline, price } = data;
-
     const picture = `assets/photographers/${portrait}`;
-
+    
     function getUserCardDOM() {
         // Crée l'element article
-        const article = document.createElement( 'article' );
-        article.setAttribute("user", id);
-        // Crée les différents éléments à l'interieur d'article
+        const article = document.createElement( 'article' );       
+        article.setAttribute("href", `photographer.html?photographerId=${id}`);
+        // Crée l'element image
         const img = document.createElement( 'img' );
-        const h2 = document.createElement( 'h2' );
-        const location = document.createElement( 'p' );
-        const intro = document.createElement( 'p' );
-        const rate = document.createElement( 'p' );
-
-        // Récupère le contenu qui va aller peupler les éléments
         img.setAttribute("src", picture)
-        h2.textContent = name;
-        location.textContent = city + ", " + country;
-        intro.textContent = tagline;
-        rate.textContent = price + "€/jour ";
-        
-        location.classList.add("location");
-        intro.classList.add("tagline");
-        rate.classList.add("rate");
-
+        img.setAttribute("alt", "portrait de "+ name )
+        img.classList.add("portrait");
         article.appendChild(img);
+        
+        // Crée l'element heading
+        const h2 = document.createElement( 'h2' );
+        h2.textContent = name;
         article.appendChild(h2);
+        
+        // Crée p .location
+        const location = document.createElement( 'p' );
+        location.textContent = city + ", " + country;
+        location.classList.add("location");
         article.appendChild(location);
+        
+        // Crée l'element p .tagline
+        const intro = document.createElement( 'p' );
+        intro.textContent = tagline;
+        intro.classList.add("tagline");
         article.appendChild(intro);
+        
+        // Crée l'element p .price
+        const rate = document.createElement( 'p' );
+        rate.textContent = price + "€/jour ";
+        rate.classList.add("rate");
         article.appendChild(rate);
 
         return (article);

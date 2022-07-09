@@ -1,4 +1,3 @@
-
 function photographerFactory(data) {
     const { id, name, city, country, portrait, tagline, price } = data;
     const picture = `assets/photographers/${portrait}`;
@@ -6,7 +5,8 @@ function photographerFactory(data) {
     function getUserCardDOM() {
         // Crée l'element article
         const article = document.createElement( 'article' );       
-        article.setAttribute("href", `photographer.html?photographerId=${id}`);
+        article.setAttribute("id", id);
+        article.setAttribute("onclick", `goTo()`);
         // Crée l'element image
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture)

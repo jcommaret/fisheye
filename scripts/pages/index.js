@@ -20,13 +20,6 @@ async function renderPhotographers(){
         photographers: [photographers]})
 }
 
-async function renderMedias(){
-    // assigne a medias les medias
-    let media = await getData();
-    return ({
-        media: [media]})    
-}
-
 async function displayPhotographers(photographers) {
     const photographersSection = document.querySelector(".photographer_section");
     photographers.forEach((photographer) => {
@@ -36,19 +29,10 @@ async function displayPhotographers(photographers) {
     });
 };
 
-async function displayMedias(media) {
-    const mediaSection = document.querySelector(".media_section");
-    media.forEach((m) => {
-        const mediaModel = mediaFactory(m);
-        const mediaCardDOM = mediaModel.getMediaCardDOM();
-        mediaSection.appendChild(mediaCardDOM);
-    });
-};
 
 async function init() {
-    const { photographers, media} = await getData();
+    const { photographers } = await getData();
     displayPhotographers(photographers);
-    displayMedias(media);
 };
 
 init();

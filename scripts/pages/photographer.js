@@ -1,6 +1,7 @@
 var params = new URLSearchParams(window.location.search),
     photographerId = params.get("photographerId");
-
+    photographerName = params.get("photographerName");
+    
 async function renderMedias(){
   // assigne a photographers le tableau renvoyé par le "get photographers"
     let media = await getData();    
@@ -25,4 +26,4 @@ async function init() {
 
 init();
 
-console.log(photographerId);
+console.log(photographerName);

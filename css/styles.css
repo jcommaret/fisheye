@@ -140,6 +140,7 @@ header h1 {
   }
 }
 .photograph-header h1 {
+  font-size: 64px;
   color: #D3573C;
   font-weight: 400;
   font-family: "DM Sans", sans-serif;
@@ -221,6 +222,20 @@ header h1 {
 }
 .medias_section img.portrait {
   object-fit: cover;
+}
+.medias_section .picinfo {
+  display: flex;
+  justify-content: space-between;
+}
+.medias_section .picinfo h2, .medias_section .picinfo p {
+  font-size: 24px;
+  color: #901C1C;
+}
+.medias_section .picinfo h2 {
+  width: 240px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 #contact_modal {

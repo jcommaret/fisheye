@@ -8,14 +8,28 @@
   </head>
   <body>
    
-    <header>
-      <img src="assets/images/logo.png" class="logo" />
+    <header aria-role="banner">
+      <img src="assets/images/logo.png" class="header-logo" alt="Logo de Fisheye" />
     </header>
    
     <main id="main">
       <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        
+        <div class="photograph-informations">
+          <h1>Mimi Keel</h1>
+          <p class="location">London, UK</p>
+          <p class="tagline">Voir le beau dans le quotidien</p>
+        </div> 
+
+        <div class="btn">
+          <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        </div>
+
+        <div class="photo">
+          <img src="assets/photographers/MimiKeel.jpg" alt="portrait de Mimi Keel" class="portrait">
+        </div>
       </div>
+
       <div class="medias_section"></div>
     </main>
    
@@ -35,10 +49,11 @@
 			</div>
       </div>
 		</div>
-    <script src="/scripts/utils/contactForm.js"></script>
+    <script src="scripts/pages/navigation.js"></script>
+    <script src="scripts/utils/fetchApi.js"></script>
     <script src="scripts/factories/media.js"></script>
     <script src="scripts/pages/photographer.js"></script>
-   
+    <script src="/scripts/utils/contactForm.js"></script>
   </body>
 
   </html>

@@ -6,7 +6,7 @@ function photographerFactory(data) {
         // Crée l'element article
         const article = document.createElement( 'article' );       
         article.setAttribute("id", id);
-        article.setAttribute("onclick", `goTo()`);
+        article.setAttribute("onclick", `goTo(${id})`);
         // Crée l'element image
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture)

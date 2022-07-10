@@ -52,6 +52,8 @@ header h1 {
   flex-wrap: wrap;
   margin-top: 100px;
   justify-content: center;
+  margin-top: 100px;
+  justify-content: center;
 }
 @media screen and (min-width: 768px) {
   .photographer_section {
@@ -60,7 +62,7 @@ header h1 {
   }
 }
 .photographer_section article {
-  width: calc(50% - 20px);
+  max-width: 50%;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -71,10 +73,16 @@ header h1 {
   }
 }
 .photographer_section article h2 {
+  width: 200px;
   color: #D3573C;
   font-size: 36px;
   font-weight: 400;
   text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .photographer_section article h2 {
+    width: 100%;
+  }
 }
 .photographer_section article img {
   margin-left: auto;
@@ -106,7 +114,6 @@ header h1 {
   margin-bottom: 3px;
 }
 .photographer_section article .rate {
-  font-family: DM Sans;
   font-size: 9px;
   font-weight: 400;
   line-height: 12px;
@@ -117,26 +124,102 @@ header h1 {
 
 .photograph-header {
   background-color: #FAFAFA;
-  height: 300px;
-  margin: 0 100px;
+  padding: 20px;
+  margin: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  flex: 3;
 }
-
-.contact_button {
-  font-size: 20px;
+@media screen and (min-width: 768px) {
+  .photograph-header {
+    flex-direction: row;
+    padding: 100px 20px 100px 20px;
+    margin: 0 100px;
+  }
+}
+.photograph-header h1 {
+  color: #D3573C;
+  font-weight: 400;
+  font-family: "DM Sans", sans-serif;
+  line-height: 83px;
+  letter-spacing: 0em;
+}
+.photograph-header .location {
+  font-size: 24px;
+  line-height: 31px;
+  letter-spacing: 0em;
+  color: #901C1C;
+}
+.photograph-header .tagline {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0em;
+  color: #525252;
+}
+.photograph-header .btn {
+  align-items: center;
+  justify-content: center;
+}
+.photograph-header img {
+  margin-left: auto;
+  margin-right: auto;
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  background: #C4C4C4;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+}
+@media screen and (min-width: 768px) {
+  .photograph-header img {
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+  }
+}
+.photograph-header img.portrait {
+  object-fit: cover;
+}
+.photograph-header .contact_button {
+  font-size: 14px;
   font-weight: bold;
   color: white;
   padding: 11px;
-  width: 170px;
-  height: 70px;
+  width: 100px;
+  min-height: 35px;
   border: none;
   background-color: #901C1C;
   border-radius: 5px;
   cursor: pointer;
 }
+@media screen and (min-width: 768px) {
+  .photograph-header .contact_button {
+    font-size: 20px;
+    width: 170px;
+    height: 70px;
+  }
+}
+.photograph-information, .photograph .btn, .photograph img {
+  display: flex;
+  flex: 1;
+}
 
-main img {
-  width: 100px;
-  height: 100px;
+.medias_section {
+  padding: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+.medias_section img {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  height: 300px;
+}
+.medias_section img.portrait {
   object-fit: cover;
 }
 

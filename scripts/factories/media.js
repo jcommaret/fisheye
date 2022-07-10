@@ -1,6 +1,6 @@
 function mediaFactory(data) {
   const { image, title, likes } = data;
-  const picture = `assets/images/${image}`;
+  const picture = `assets/images/small/${image}`;
 
   function getMediaCardDOM() {
       // Crée l'element article

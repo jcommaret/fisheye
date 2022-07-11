@@ -20,4 +20,17 @@ async function init() {
     displayPhotographers(photographers);
 };
 
+function goTo(id, name) {
+    const photographerId = id;
+    const photographerName = name;  
+    
+    var params = new URLSearchParams();
+
+    params.append("photographerId", photographerId);       
+    params.append("photographerName", photographerName);       
+
+    var url = "photographer.html?" + params.toString();
+    location.href = url;
+}
+
 init();

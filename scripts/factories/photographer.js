@@ -7,6 +7,7 @@ function photographerFactory(data) {
         const article = document.createElement( 'article' );       
         article.setAttribute("id", id);
         article.setAttribute("onclick", `goTo(${id})`);
+        article.setAttribute("name", name);
         // Crée l'element image
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture)
@@ -36,7 +37,6 @@ function photographerFactory(data) {
         rate.textContent = price + "€/jour ";
         rate.classList.add("rate");
         article.appendChild(rate);
-
         return (article);
     }
     return { id, name, city, country, price, picture, tagline, getUserCardDOM }

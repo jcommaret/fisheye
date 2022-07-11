@@ -2,7 +2,6 @@
 const api_url = "data/photographers.json";
 //const api_url = "fisheyes/data/photographers.json";
 
-
 async function getData() {
     // fetch de l'api
     let url = api_url;

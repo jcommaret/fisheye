@@ -1,15 +1,11 @@
-var params = new URLSearchParams(window.location.search);
-var photographerId = params.get("photographerId");
-var photographerName = params.get("photographerName");
-    
 async function renderMedias(){
     // assigne a photographers le tableau renvoyé par le "get photographers"
     let media = await getData();    
     // retourne le tableau photographers seulement une fois
     return (
-        {media: [media]}
-        )
-    }
+    {media: [media]}
+    )
+}
   
 async function displayMedias(media) {
     const mediasSection = document.querySelector(".medias_section");
@@ -26,3 +22,4 @@ async function init() {
 };
 
 init();
+

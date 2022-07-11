@@ -1,3 +1,5 @@
+
+
 function photographerFactory(data) {
     const { id, name, city, country, portrait, tagline, price } = data;
     const picture = `assets/photographers/${portrait}`;
@@ -7,7 +9,6 @@ function photographerFactory(data) {
         const article = document.createElement( 'article' );       
         article.setAttribute("id", id);
         article.setAttribute("onclick", `goTo(${id})`);
-        article.setAttribute("name", name);
         // Crée l'element image
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture)
@@ -39,5 +40,16 @@ function photographerFactory(data) {
         article.appendChild(rate);
         return (article);
     }
+    
     return { id, name, city, country, price, picture, tagline, getUserCardDOM }
 }
+
+function goTo(id, name) {
+    const params = new URLSearchParams();
+    params.append("userId", id);
+    params.append("userName", name);
+    console.log(id + name);
+    //var url = "photographer.html?" + params.toString();
+    //location.href = url;    
+}
+

@@ -6,7 +6,7 @@ async function renderMedias(){
     {media: [media]}
     )
 }
-  
+
 async function displayMedias(media) {
     const mediasSection = document.querySelector(".medias_section");
     media.forEach((m) => {

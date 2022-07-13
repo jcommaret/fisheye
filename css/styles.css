@@ -130,7 +130,6 @@ header h1 {
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  flex: 3;
 }
 @media screen and (min-width: 768px) {
   .photograph-header {
@@ -204,21 +203,36 @@ header h1 {
 }
 .photograph-information, .photograph .btn, .photograph img {
   display: flex;
-  flex: 1;
 }
 
 .medias_section {
-  padding: 100px;
+  padding: 20px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: space-between;
+}
+@media screen and (min-width: 768px) {
+  .medias_section {
+    padding: 100px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .medias_section {
+    justify-content: space-between;
+  }
 }
 .medias_section img {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 300px;
   height: 300px;
+}
+@media screen and (min-width: 768px) {
+  .medias_section img {
+    flex-direction: row;
+    width: 300px;
+    height: 300px;
+  }
 }
 .medias_section img.portrait {
   object-fit: cover;

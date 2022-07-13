@@ -11,7 +11,6 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
-    flex:3;
     @include m.desktop{
       flex-direction: row;
       padding: 100px 20px 100px 20px;
@@ -79,21 +78,31 @@
   }
   &-information, .btn, img{
     display: flex;
-    flex:1;
-  } 
+  }
+  
 }
 .medias_section{
-  padding: 100px;
+  padding:20px;
+  @include m.desktop{
+    padding: 100px;
+  }
   display: flex;
   flex-wrap: wrap;
   gap:20px;
-  justify-content: space-between;
+  @include m.desktop{
+    justify-content: space-between;
+  }
   img{
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 300px;
     height: 300px;
+    @include m.desktop{
+      flex-direction: row;
     
+      width: 300px;
+      height: 300px;
+    }
     &.portrait{
       object-fit: cover;
     }

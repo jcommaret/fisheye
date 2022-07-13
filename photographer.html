@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Fisheye - photographe </title>
     <link href="css/styles.css" rel="stylesheet" type="text/css" />    
   </head>
@@ -13,19 +14,13 @@
    
     <main id="main">
       <div class="photograph-header">
-        
-        <div class="photograph-informations">
-          <h1>Mimi Keel</h1>
-          <p class="location">London, UK</p>
-          <p class="tagline">Voir le beau dans le quotidien</p>
-        </div> 
+        <div class="photograph-informations"></div> 
 
         <div class="btn">
           <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
         </div>
 
         <div class="photo">
-          <img src="assets/photographers/MimiKeel.jpg" alt="portrait de Mimi Keel" class="portrait">
         </div>
       </div>
 
@@ -50,10 +45,8 @@
 			</div>
 		</div>
     <script src="scripts/utils/fetchApi.js"></script>
-    <script src="scripts/pages/navigation.js"></script>
     <script src="scripts/pages/photographer.js"></script>
-    <script src="scripts/factories/media.js"></script>
+    <script src="scripts/factories/photographers.js"></script>
     <script src="scripts/utils/contactForm.js"></script>
-  
   </body>
 </html>

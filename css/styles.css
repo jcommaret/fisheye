@@ -47,22 +47,14 @@ header h1 {
 
 .photographer_section {
   display: flex;
-  gap: 70px;
-  flex: 2;
+  gap: 100px;
   flex-wrap: wrap;
   margin-top: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
   justify-content: center;
-  margin-top: 100px;
-  justify-content: center;
-}
-@media screen and (min-width: 768px) {
-  .photographer_section {
-    flex-direction: row;
-    flex: 3;
-  }
 }
 .photographer_section article {
-  max-width: 50%;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -201,8 +193,13 @@ header h1 {
     height: 70px;
   }
 }
-.photograph-information, .photograph .btn, .photograph img {
+.photograph-informations, .photograph .btn, .photograph img {
   display: flex;
+}
+.photograph-informations {
+  display: flex;
+  flex-direction: column;
+  width: 33.3333333333%;
 }
 
 .medias_section {

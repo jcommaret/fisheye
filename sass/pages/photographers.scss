@@ -76,8 +76,13 @@
       }
     } 
   }
-  &-information, .btn, img{
+  &-informations, .btn, img{
     display: flex;
+  }
+  &-informations{
+    display: flex;
+    flex-direction: column;
+    width:calc(100%/3);
   }
   
 }

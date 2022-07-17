@@ -15,7 +15,7 @@ h1.textContent = surname;
 photographe.appendChild(h1);
 
 // localisation
-const locate = document.createElement( 'p' );
+const locate = document.createElement( 'h2' );
 locate.textContent = city + ", " + country ;
 locate.classList.add("location");
 photographe.appendChild(locate);
@@ -47,6 +47,7 @@ function mediaFactory(data) {
       const div = document.createElement( 'div' );
       img.setAttribute("src", picture);
       img.setAttribute("loading", "lazy");
+      img.setAttribute("alt","Photo nommée " + title);
       img.classList.add("portrait");
       article.appendChild(img);
       div.classList.add("picinfo");
@@ -56,7 +57,7 @@ function mediaFactory(data) {
       h2.textContent = title;
       div.appendChild(h2);
 
-      const p = document.createElement( 'p' );
+      const p = document.createElement( 'div' );
       p.textContent = likes + "♥";
       div.appendChild(p);
 

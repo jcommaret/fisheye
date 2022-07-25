@@ -9,8 +9,9 @@ module.exports = {
     photographers: path.resolve(__dirname, './src/photographers.js'),
   },
   output:{
-    path : __dirname + '/dist',
-    filename: "[name].bundle.js"
+    path : path.resolve(__dirname, 'dist'),
+    filename: "[name].bundle.js",
+    clean:true
   },
   // plugins
   plugins: [
@@ -20,7 +21,8 @@ module.exports = {
       filename: 'home.html', // output file
     }),
     new HtmlWebpackPlugin({
-      title: 'Fisheye - Photographers',
+      title: 'Fisheye',
+      navTitle:'Nos Photographes',
       template: path.resolve(__dirname, './src/photographers.html'), // template file
       filename: 'photographers.html', // output file
     }),
@@ -42,13 +44,5 @@ module.exports = {
         type: 'assets',
       },
     ],
-  },
-
-  devServer: {
-    static: {
-      directory: path.join(__dirname, 'public'),
-    },
-    compress: true,
-    port: 9000,
   },
 };

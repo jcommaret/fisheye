@@ -4,7 +4,11 @@
     <title><%= htmlWebpackPlugin.options.title %> | <%= htmlWebpackPlugin.options.navTitle %></title>
     <link rel="stylesheet" href="css/styles.css">
   </head>
-  <body>
-    <div id="photographers"></div>
+  <body class="photographers">
+      <header aria-role="banner">
+        <a href="index.html"><img src="assets/images/small/logo.png" class="header-logo" alt="Logo de Fisheye" /></a>
+        <h1><%= htmlWebpackPlugin.options.navTitle %></h1>
+      </header>
+    </div>
   </body>
 </html>

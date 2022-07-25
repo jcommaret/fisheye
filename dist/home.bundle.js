@@ -1,1 +1,1 @@
-(()=>{"use strict";var e=document.createElement("h1");e.textContent="home",document.querySelector("#home").append(e)})();
+(()=>{"use strict";var e=document.createElement("h1");e.textContent="home",document.querySelector(".home").append(e)})();

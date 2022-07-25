@@ -1,6 +1,5 @@
-# Base de code du projet P6 - Parcours Front-end
+webpack
 
-## Démarrer le projet
+node modules
 
-Rien à installer ici, il suffit d'ouvrir le fichier `index.html`.
-
+readme

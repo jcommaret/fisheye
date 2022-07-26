@@ -1,11 +1,27 @@
-import './styles/main.scss'
+// Test import of a JavaScript module
+import { plop } from '@/js/example'
 
-// Create heading node
-const heading = document.createElement('h1')
-heading.textContent = 'home'
+// Test import of an asset
+import webpackLogo from '@/images/webpack-logo.svg'
 
-// Append SVG and heading nodes to the DOM
-const app = document.querySelector('#photographer')
-app.append(heading)
+// Test import of styles
+import '@/styles/index.scss'
 
+// Appending to the DOM
+const logoP = document.createElement('img')
+logoP.src = webpackLogo
 
+const headingP = document.createElement('h1')
+headingP.textContent = plop()
+
+// Test a background image url in CSS
+const imageBackgroundP = document.createElement('div')
+imageBackgroundP.classList.add('image')
+
+// Test a public folder asset
+const imagePublicP = document.createElement('img')
+imagePublicP.src = '/assets/example.png'
+
+const photographersP = document.getElementById('photographers')
+
+photographersP.append(logoP, headingP, imageBackgroundP, imagePublicP)

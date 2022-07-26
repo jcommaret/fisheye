@@ -1,12 +1,30 @@
-const path = require('path')
+const path = require('path'),
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
+  
+  mode: 'development',
+
+  // Control how source maps are generated
+  devtool: 'inline-source-map',
+
+  // Spin up a server for quick development
+  devServer: {
+    historyApiFallback: true,
+    open: true,
+    compress: true,
+    hot: true,
+    port: 8080,
+  },
+
+  
+  
   // Point d'entée
   entry: {
     home: path.resolve(__dirname, './src/home.js'),
-    photographers: path.resolve(__dirname, './src/photographers.js'),
+    photographers: path.resolve(__dirname, './src/photographers.js')
   },
   output:{
     path : path.resolve(__dirname, 'dist'),
@@ -27,8 +45,9 @@ module.exports = {
       filename: 'photographers.html', // output file
     }),
     new CleanWebpackPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
   ],
-
+  
   // modules
   module: {
     rules: [
@@ -38,10 +57,15 @@ module.exports = {
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
+      // Styles
+      {
+        test: /\.(scss|css)$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+      },
       // Images
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-        type: 'assets',
+        type: 'asset/resource',
       },
     ],
   },

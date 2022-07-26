@@ -1,10 +1,20 @@
+// styles
 import './styles/main.scss'
-// Create heading node
+import picture from './images/logo.png'
 
-const heading = document.createElement('h1')
-heading.textContent = 'home'
+const app = document.querySelector('#home')
 
-// Append SVG and heading nodes to the DOM
-const app = document.querySelector('.home')
+const header = document.createElement('header')
+header.setAttribute("aria-role", "banner")
+header.appendChild(indexLink)
 
-app.append(heading)
+const indexLink = document.createElement('a')
+indexLink.setAttribute("href","index.html")
+indexLink.appendChild(logoPicture)
+
+const logoPicture = document.createElement('img')
+logoPicture.setAttribute("src", picture)
+logoPicture.setAttribute("alt", "Logo" )
+logoPicture.classList.add("header-logo")
+
+app.append(header)

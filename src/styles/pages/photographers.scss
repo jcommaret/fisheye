@@ -1,0 +1,129 @@
+@use "../utils/colors.scss" as c;
+@use "../utils/mixins.scss" as m;
+@use "../utils/fonts.scss" as f;
+
+.photograph{
+  &-header {
+    background-color: c.$llg;
+    padding: 20px;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    @include m.desktop{
+      flex-direction: row;
+      padding: 100px 20px 100px 20px;
+      margin: 0 100px;
+    }
+    h1{
+      font-size: 64px;
+      color:c.$orange;
+      font-weight: 400;
+      font-family: f.$dm-sans;
+      line-height: 83px;
+      letter-spacing: 0em;
+    }
+    .location{
+      font-size: 24px;
+      line-height: 31px;
+      letter-spacing: 0em;
+      color:c.$red;
+    }
+    .tagline{
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 23px;
+      letter-spacing: 0em;
+      color:c.$p-grey;
+    }
+    .btn{
+      align-items: center;
+      justify-content: center;
+    }
+    img {
+      margin-left:auto;
+      margin-right: auto;
+      height:100px;
+      width:100px;
+      border-radius:50px;
+      background: c.$bck-grey;
+      box-shadow: 0px 4px 12px c.$shadow-grey;
+      @include m.desktop{
+        height:200px;
+        width:200px;
+        border-radius: 100px;
+      }
+      &.portrait{
+        object-fit: cover;  
+      }
+    }
+    .contact_button {
+      font-size: 14px;
+      font-weight: bold;
+      color: c.$white;
+      padding: 11px;
+      width: 100px;
+      min-height:35px;
+      border: none;
+      background-color: c.$red;
+      border-radius: 5px;
+      cursor: pointer;
+      @include m.desktop{
+        font-size: 20px;
+        width: 170px;
+        height: 70px;
+      }
+    } 
+  }
+  &-informations, .btn, img{
+    display: flex;
+  }
+  &-informations{
+    display: flex;
+    flex-direction: column;
+    width:calc(100%/3);
+  }
+  
+}
+.medias_section{
+  padding:20px;
+  @include m.desktop{
+    padding: 100px;
+  }
+  display: flex;
+  flex-wrap: wrap;
+  gap:20px;
+  @include m.desktop{
+    justify-content: space-between;
+  }
+  img{
+    display:flex;
+    flex-direction: column;
+    width: 300px;
+    height: 300px;
+    @include m.desktop{
+      flex-direction: row;
+    
+      width: 300px;
+      height: 300px;
+    }
+    &.portrait{
+      object-fit: cover;
+    }
+  }
+  .picinfo{
+    display: flex;
+    justify-content: space-between;
+    h2, p{
+      font-size: 24px;
+      color:c.$red;  
+    }
+    h2{
+      width:240px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+}

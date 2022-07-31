@@ -1,22 +1,35 @@
-// Test import of an asset
 import fisheyeLogo from '@/images/content/small/logo.png'
-
-// Test import of styles
 import '@/styles/main.scss'
+import { displayPhotographers } from 'js/pages/homepage.js';
 
-// Appending to the DOM
-const homepage = document.getElementById('homepage')
+const homepage = document.getElementById('homepage');
+
 const headerFisheye = document.createElement('header');
-const homepageLink = 
+      headerFisheye.setAttribute("aria-role", "banner");
 
-const img = document.createElement( 'img' );
-      img.setAttribute("src", picture)
-      img.setAttribute("alt", "portrait de "+ name )
-      img.classList.add("portrait");
-      article.appendChild(img);
+const logo = document.createElement('img');
+      logo.setAttribute("class","header-logo");
+      logo.setAttribute("src",logo);
+      logo.src = fisheyeLogo;
 
-const logo = document.createElement('img')
-      logo.setAttribute("src", logo)
-      logo.src = fisheyeLogo
+const link = document.createElement("a");
+      link.setAttribute("href","index.html");
+      link.append(logo);
 
-      homepage.append(headerFisheye)
+const pageName = document.createElement('h1');
+      pageName.textContent="Nos photographes";
+
+headerFisheye.append(link, pageName);
+
+const mainFisheyesPhotographers = document.createElement("main");
+      mainFisheyesPhotographers.setAttribute("id","main");
+
+const photographerSection = document.createElement("section");
+      photographerSection.setAttribute("class", "photographers_section");
+      photographerSection.setAttribute("aria-label", "Tout les photograghes");
+
+mainFisheyesPhotographers.append(photographerSection);
+headerFisheye.append(link, pageName);
+homepage.append(headerFisheye, mainFisheyesPhotographers)
+
+displayPhotographers();

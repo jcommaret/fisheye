@@ -1,4 +1,4 @@
-function photographerFactory(data) {
+export function photographerFactory(data) {
     const { id, name, city, country, portrait, tagline, price } = data;
     const picture = `assets/photographers/${portrait}`;
     
@@ -38,21 +38,5 @@ function photographerFactory(data) {
 
         return (article);  
     }
-    return { id, name, city, country, price, picture, tagline, getUserCardDOM }
-    
+    return { getUserCardDOM }
 }
-
-function goTo(id, name, city, country, tagline, portrait ) {
-    const  params = new URLSearchParams();
-            params.append("userId", id);
-            params.append("userName", name);
-            params.append("city", city);
-            params.append("country", country);
-            params.append("tagline", tagline);
-            params.append("portrait", portrait);
-    const url = "photographer.html?" + params.toString();    
-    window.location.href = url;
-};
-    
-
-

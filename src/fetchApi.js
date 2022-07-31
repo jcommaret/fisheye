@@ -1,8 +1,7 @@
 // URL du json
-const api_url = "data/photographers.json";
-//const api_url = "fisheyes/data/photographers.json";
+const api_url = require('data/photographers.json');
 
-async function getData() {
+export async function getData() {
     // fetch de l'api
     let url = api_url;
     try {

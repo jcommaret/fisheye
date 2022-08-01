@@ -1,6 +1,6 @@
 export function photographerFactory(data) {
     const { id, name, city, country, portrait, tagline, price } = data;
-    const picture = `assets/photographers/${portrait}`;
+    const picture = `assets/content/small/${portrait}`;
     
     function getUserCardDOM () {
         // Crée l'element article
@@ -38,5 +38,5 @@ export function photographerFactory(data) {
 
         return (article);  
     }
-    return { getUserCardDOM }
+    return { id, name, city, country, portrait, tagline, price, picture, getUserCardDOM }
 }

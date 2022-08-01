@@ -1,6 +1,12 @@
+import { photographerFactory } from './js/factories/homepage';
+import { getPhotographers, displayData } from './js/pages/homepage';
+
 import fisheyeLogo from '@/images/content/small/logo.png'
 import '@/styles/main.scss'
-import { displayPhotographers } from 'js/pages/homepage.js';
+
+photographerFactory();
+getPhotographers();
+displayData();
 
 const homepage = document.getElementById('homepage');
 
@@ -25,11 +31,9 @@ const mainFisheyesPhotographers = document.createElement("main");
       mainFisheyesPhotographers.setAttribute("id","main");
 
 const photographerSection = document.createElement("section");
-      photographerSection.setAttribute("class", "photographers_section");
+      photographerSection.setAttribute("class", "photographer-section");
       photographerSection.setAttribute("aria-label", "Tout les photograghes");
 
 mainFisheyesPhotographers.append(photographerSection);
 headerFisheye.append(link, pageName);
 homepage.append(headerFisheye, mainFisheyesPhotographers)
-
-displayPhotographers();

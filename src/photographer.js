@@ -1,3 +1,4 @@
 import '@/sass/main.scss';
-import '@/js/factories/profile';
-import '@/js/pages/photographer';
+
+require ('@/js/factories/profile');
+require ('@/js/pages/photographer');

@@ -1,4 +1,4 @@
-export async function getPhotographers() {
+async function getPhotographers() {
     // Penser à remplacer par les données récupérées dans le json
     const photographers = [
         {
@@ -25,7 +25,7 @@ export async function getPhotographers() {
         photographers: [...photographers, ...photographers, ...photographers]})
 }
 
-export async function displayData(photographers) {
+async function displayData(photographers) {
     const photographersSection = document.querySelector(".photographer_section");
 
     photographers.forEach((photographer) => {
@@ -35,7 +35,7 @@ export async function displayData(photographers) {
     });
 };
 
-export async function init() {
+async function init() {
     // Récupère les datas des photographes
     const { photographers } = await getPhotographers();
     displayData(photographers);

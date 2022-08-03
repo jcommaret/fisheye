@@ -7,8 +7,8 @@ const paths = require('./paths')
 module.exports = {
   // Where webpack looks to start building the bundle
   entry: {
-    homepage : [paths.src + '/homepage.js'],
-    photographers: [paths.src + '/photographers.js'],
+    homepage : [paths.src + '/index.js'],
+    photographer: [paths.src + '/photographer.js'],
   },
   // Where webpack outputs the assets and bundles
   output: {
@@ -39,15 +39,15 @@ module.exports = {
     // Generates deprecation warning: https://github.com/jantimon/html-webpack-plugin/issues/1501
     new HtmlWebpackPlugin({
       title: 'Fisheye',
-      favicon: paths.src + '/src/favicon.png',
-      template: paths.src + '/homepage.html', // template file
+      favicon: paths.src + '/images/favicon.png',
+      template: paths.src + '/index.html', // template file
       filename: 'index.html', // output file
     }),
     new HtmlWebpackPlugin({
       title: 'Fisheye - Nos Photographes',
       favicon: paths.src + '/images/favicon.png',
-      template: paths.src + '/photographers.html', // template file
-      filename: 'photographers.html', // output file
+      template: paths.src + '/photographer.html', // template file
+      filename: 'photographer.html', // output file
     }),
   ],
 

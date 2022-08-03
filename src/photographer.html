@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
-  
   <head>
     <meta charset="utf-8">
-    <title>Fisheye - photographe </title>
-    
+    <link rel="icon" type="image/png" href="<%= htmlWebpackPlugin.options.favicon %>"">
+    <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   
-  <body>
+  <body id="photographers">
     <header>
-      <img src="images/logo.png" class="logo" />
+      <img src="<%= htmlWebpackPlugin.options.logo %>" class="logo" />
     </header>
     <main id="main">
       <div class="photograph-header">

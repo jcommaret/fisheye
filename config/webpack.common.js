@@ -39,6 +39,7 @@ module.exports = {
     // Generates deprecation warning: https://github.com/jantimon/html-webpack-plugin/issues/1501
     new HtmlWebpackPlugin({
       title: 'Fisheye',
+      logo: paths.src + '/images/images/logo.png',
       favicon: paths.src + '/images/favicon.png',
       template: paths.src + '/index.html', // template file
       filename: 'index.html', // output file

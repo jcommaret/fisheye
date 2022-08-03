@@ -1,12 +1,8 @@
-import { photographerFactory } from './js/factories/homepage';
-import { getPhotographers, displayData } from './js/pages/homepage';
-
-import fisheyeLogo from '@/images/content/small/logo.png'
+import fisheyeLogo from '@/assets/images/logo.png'
 import '@/styles/main.scss'
+import '@/js/factories/homepage.js'
+import '@/js/pages/homepage.js'
 
-photographerFactory();
-getPhotographers();
-displayData();
 
 const homepage = document.getElementById('homepage');
 
@@ -36,4 +32,4 @@ const photographerSection = document.createElement("section");
 
 mainFisheyesPhotographers.append(photographerSection);
 headerFisheye.append(link, pageName);
-homepage.append(headerFisheye, mainFisheyesPhotographers)
+homepage.append(headerFisheye, mainFisheyesPhotographers);

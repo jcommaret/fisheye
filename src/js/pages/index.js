@@ -3,9 +3,10 @@ require ('@/js/fetch_api');
 
 const api_url = "https://raw.githubusercontent.com/jcommaret/fisheye/master/src/data/photographers.json";
 
-async function getPhotographers(api_url, name) {
+async function getPhotographers(api_url) {
     // Penser à remplacer par les données récupérées dans le json
-    const photographers = getPhotographers(api_url, name)
+    let dataArray = JSON.parse(data)
+    const photographers = dataArray;
     // et bien retourner le tableau photographers seulement une fois
     return ({
         photographers: [...photographers]})

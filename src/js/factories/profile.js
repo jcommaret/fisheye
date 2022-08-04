@@ -14,4 +14,6 @@ function photographerFactory(data) {
         return (article);
     }
     return { name, picture, getUserCardDOM }
+
+    console.log(name);
 }

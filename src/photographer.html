@@ -7,14 +7,19 @@
   </head>
   
   <body id="photographers">
+    
     <header>
-      <img class="header-logo" src="<%=require("./images/images/logo.png")%> />
+      <a href="index.html">
+        <img class="header-logo" src=<%=require("./images/images/logo.png")%> />
+      </a>
     </header>
+    
     <main id="main">
       <div class="photograph-header">
         <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
       </div>
     </main>
+    
     <div id="contact_modal">
 			<div class="modal">
 				<header>
@@ -30,5 +35,6 @@
 				</form>
 			</div>
 		</div>
+  
   </body>
 </html>

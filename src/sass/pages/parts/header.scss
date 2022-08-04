@@ -1,6 +1,13 @@
 @use "../../utils/colors.scss" as c;
 @use "../../utils/mixins.scss" as m;
 header {
+  a{
+    height:50px;
+    width:200px;
+    @include m.desktop{
+      margin-left: 100px;
+    }
+  }
   display: flex;
   flex-direction: column;
   @include m.desktop{
@@ -15,9 +22,7 @@ header {
   }
   .header-logo {
     height: 50px;
-    @include m.desktop{
-      margin-left: 100px;
-    }
+    width: 200px;
   }
   h1 {
     color: c.$red;

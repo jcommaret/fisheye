@@ -1,3 +1,5 @@
+import photographerFactory from "./factories/profile";
+
 // api url
 const api_url = "https://raw.githubusercontent.com/jcommaret/fisheye/master/src/data/photographers.json";
 // Defining async function
@@ -8,10 +10,10 @@ function getPhotographers(){
     .then(response => response.json())
     .then(data => {
         console.log(data.photographers);
-    }) 
+    })
 };
 
-function GetAllPhotographers(){
+export default function getAllPhotographers(id){
     const photographers = getPhotographers();
     return photographers;
 }

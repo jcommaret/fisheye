@@ -5,7 +5,7 @@ async function getPhotographers(data) {
     // Penser à remplacer par les données récupérées dans le json
     const photographers = [
         {
-            "name":s "Ma data test",
+            "name": "Ma data test",
             "id": 1,
             "city": "Paris",
             "country": "France",

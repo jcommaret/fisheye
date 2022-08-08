@@ -7,6 +7,7 @@ export function getPhotographers(){
     fetch(api_url)
     .then(response => response.json())
     .then(data => { data.photographers })
+    return data;
 };
 
 export default function GetAllPhotographers(){

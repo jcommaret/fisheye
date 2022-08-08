@@ -5,18 +5,13 @@ const api_url = "https://raw.githubusercontent.com/jcommaret/fisheye/master/src/
 // Defining async function
 
 // GetAllPhotographers
-function getPhotographers(){
+export function getPhotographers(){
     fetch(api_url)
     .then(response => response.json())
     .then(data => {
-        console.log(data.photographers);
+        console.log(data.photographers); 
     })
 };
-
-export default function getAllPhotographers(id){
-    const photographers = getPhotographers();
-    return photographers;
-}
 
 // GetMedias
 function getMedias(){
@@ -32,3 +27,6 @@ function getMediaById(id){
     const medias = getMedias();
     return medias.filter(media => { return media.photographerId === id });
 }
+
+
+getPhotographer();

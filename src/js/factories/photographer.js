@@ -1,5 +1,5 @@
-export default function photographerFactory() {
-    const { name, portrait } = getAllPhotographers();
+function photographerFactory(data) {
+    const { name, portrait } = data;
 
     const picture = `assets/photographers/${portrait}`;
 

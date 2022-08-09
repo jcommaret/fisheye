@@ -5,7 +5,6 @@ export async function renderPhotographers(){
     // assigne a photographers le tableau renvoyé par le "get photographers"
     const photographers = await getData();    
     // retourne le tableau photographers seulement une fois
-    
 }
 
 async function displayPhotographers(photographers) {

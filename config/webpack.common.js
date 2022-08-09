@@ -40,13 +40,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Fisheye',
       logo: paths.src + '/images/images/logo.png',
-      favicon: paths.src + '/images/favicon.png',
+      favicon: paths.src + '/images/icons/favicon.png',
       template: paths.src + '/index.html', // template file
       filename: 'index.html', // output file
     }),
     new HtmlWebpackPlugin({
       title: 'Fisheye - Nos Photographes',
-      favicon: paths.src + '/images/favicon.png',
+      favicon: paths.src + '/images/icons/favicon.png',
       template: paths.src + '/photographer.html', // template file
       filename: 'photographer.html', // output file
     }),

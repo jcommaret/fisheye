@@ -1,5 +1,5 @@
-import photographerFactory from "../factories/photographer";
 import { getData } from "../fetch_api";
+import { photographerFactory } from "../factories/photographer";
 
 export async function renderPhotographers(){
     // assigne a photographers le tableau renvoyé par le "get photographers"

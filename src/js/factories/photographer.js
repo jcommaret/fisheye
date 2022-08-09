@@ -1,18 +1,21 @@
-export default function photographerFactory(data) {
+export function photographerFactory(data) {
     const { id, name, city, country, portrait, tagline, price } = data;
 
     const picture = require (`images/photographers/${portrait}`);
     
     function getUserCardDOM() {
+        
         const article = document.createElement( 'article' );       
-        article.addEventListener("click", function () {goTo(id)});
+        article.addEventListener("click", function () { goTo(id) });
         article.classList.add("article");
+        
         // Crée l'element image
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture)
         img.setAttribute("alt", "portrait de "+ name )
         img.classList.add("portrait");
         article.appendChild(img);
+        
         // Crée l'element heading
         const h2 = document.createElement( 'h2' );
         h2.textContent = name;
@@ -39,4 +42,12 @@ export default function photographerFactory(data) {
         return (article);
     }
     return { id, name, city, country, price, picture, tagline, getUserCardDOM }
+}
+
+function goTo(id) {
+    const photographerId = id;
+    const params = new URLSearchParams();
+    params.append("photographerId", photographerId);       
+    const url = "photographer.html?" + params.toString();
+    location.href = url;
 }

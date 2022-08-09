@@ -13,14 +13,6 @@ export async function getData() {
     }
 }
 
-// GetAllPhotographers
-export function getPhotographers(){
-    fetch(api_url)
-    .then(response => response.json())
-    .then(data => { data.photographers })
-    return data;
-};
-
 // GetMedias
 function getMedias(){
     fetch(api_url)
@@ -31,7 +23,7 @@ function getMedias(){
 };
 
 // GetMediasByID
-function getMediaById(id){
+export function getMediaById(id){
     const medias = getMedias();
     return medias.filter(media => { return media.photographerId === id });
 }

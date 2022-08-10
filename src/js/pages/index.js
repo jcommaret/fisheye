@@ -7,7 +7,7 @@ export async function renderPhotographers(){
     // retourne le tableau photographers seulement une fois
 }
 
-async function displayPhotographers(photographers) {
+export async function displayPhotographers(photographers) {
     const photographersSection = document.querySelector(".photographer_section");
     photographers.forEach((photographer) => {
         const photographerModel = photographerFactory(photographer);

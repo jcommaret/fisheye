@@ -23,7 +23,7 @@ function getMedias(){
 };
 
 // GetMediasByID
-export async function getMediaById(id){
+export function getMediaById(id){
     const medias = getMedias();
-    return await medias.filter(media => { return media.photographerId === id });
+    return medias.filter(media => { return media.photographerId === id });
 }

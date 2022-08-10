@@ -1,17 +1,17 @@
 export function mediaFactory(data) {
-  const { id, title, images, like } = data;
+  const { photographerId, id, title, image, like } = data;
 
-  const photo = require (`images/photographers/${images}`);
+  const photo = require (`images/images/${image}`);
   
   function getMediaCardDOM() {
-      const article = document.createElement( 'article' );       
-      article.classList.add("article");
+      const article = document.createElement( 'div' );       
+      article.classList.add("media");
       
       // Crée l'element image
       const img = document.createElement( 'img' );
       img.setAttribute("src", photo)
       img.setAttribute("alt", title )
-      img.classList.add("pdpeoepreprop");
+      img.classList.add("media_photo");
       article.appendChild(img);
       
       // Crée l'element heading
@@ -20,5 +20,5 @@ export function mediaFactory(data) {
       article.appendChild(h2);    
       return (article);
   }
-  return { id, title, images, like, getMediaCardDOM }
+  return { id, photographerId, title, image, like, getMediaCardDOM }
 }

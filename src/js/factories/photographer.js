@@ -8,7 +8,7 @@ export function photographerFactory(data) {
         const article = document.createElement( 'article' );       
         article.addEventListener("click", function () { goTo(id) });
         article.classList.add("article");
-        article.setAttribute("tabindex",0);
+        article.setAttribute("tabindex", 0);
         
         // Crée l'element image
         const img = document.createElement( 'img' );
@@ -52,3 +52,4 @@ function goTo(id) {
     const url = "photographer.html?" + params.toString();
     location.href = url;
 }
+

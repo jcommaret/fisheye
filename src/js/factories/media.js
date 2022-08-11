@@ -1,12 +1,14 @@
+import { getParams } from "../utils/getParams"
+
+getParams();
+
 export function mediaFactory(data) {
   const { photographerId, id, title, image, like } = data;
-
   const photo = require (`images/images/${image}`);
-  
   function getMediaCardDOM() {
+
       const article = document.createElement( 'div' );       
       article.classList.add("media");
-      
       // Crée l'element image
       const img = document.createElement( 'img' );
       img.setAttribute("src", photo)
@@ -22,3 +24,4 @@ export function mediaFactory(data) {
   }
   return { id, photographerId, title, image, like, getMediaCardDOM }
 }
+

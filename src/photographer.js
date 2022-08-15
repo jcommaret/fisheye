@@ -1,9 +1,14 @@
 import '@/sass/main.scss';
-import { getPhotographerById } from "./js/fetch_api";
+import { getMediaById, getPhotographerById } from './js/fetch_api';
 
+const url = document.location.href 
 const params = new URLSearchParams(window.location.search);
 const id = params.get("photographerId");
-console.log(id);
 
-getPhotographerById(id);
+if (url.includes("photographer.html")){
+  getPhotographerById(id);
+  getMediaById(id);
+};
+
+
 

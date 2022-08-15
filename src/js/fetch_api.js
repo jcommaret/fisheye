@@ -13,34 +13,19 @@ export async function getData() {
     }
 }
 
-// Medias
-export function getMedias(){
-    fetch(api_url)
-    .then(response => response.json())
-    .then(data => {
-        console.log(data.media);
-    })
-};
 // Medias by id
-export function getMediaById(id){
-    const medias = getMedias();
-    return medias.filter(media => { return media.photographerId === id });
+export async function getMediaById(id){
+    const medias = await getData();
+    const mediaFiltered = medias.filter(media => { 
+        return media.photographerId === id }
+    );
+    console.log(mediaFiltered);
 }
 
-// Photographers
-export function getPhotographers(){
-    fetch(api_url)
-    .then(response => response.json())
-    .then(data => {
-        return data.photographers;
-    })
-};
-// Photographers by id
-export function getPhotographerById(id){
-    const photographers = getPhotographers();
-    console.log(photographers);
-    const photographerFiltered = photographers.filter(photographer => {
-        return photographer.id.includes(id);
+export async function getPhotographerById(id){
+    const photographers = await getData();
+    const photographerFiltered = photographers.find(photographer => {
+        return photographer.id === id;
     });
     
     console.log(photographerFiltered);   

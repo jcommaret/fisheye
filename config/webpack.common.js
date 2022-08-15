@@ -1,6 +1,7 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const loader = require('sass-loader')
 
 const paths = require('./paths')
 
@@ -61,7 +62,7 @@ module.exports = {
 
       // Fonts and SVGs: Inline files
       { test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, type: 'asset/inline' },
-      { test: /\.json$/, type: 'json' },
+      { test: /\.json$/, type: 'json' }, 
       {
         test: /\.(mp4)$/i,
         use: [

@@ -1,10 +1,8 @@
-// api url
-const api_url = "https://raw.githubusercontent.com/jcommaret/fisheye/master/src/data/photographers.json";
-// Defining async function
+import jsonData from 'data/photographers.json';
 
 export async function getData() {
     // fetch de l'api
-    let url = api_url;
+    let url = jsonData;
     try {
         let res = await fetch(url);
         return await res.json();

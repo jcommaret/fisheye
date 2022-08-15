@@ -9,8 +9,9 @@ export async function getData() {
     } catch (error) {
         console.log(error);
     }
+    
 }
-
+console.log(getData);
 // Medias by id
 export async function getMediaById(id){
     const medias = await getData();
@@ -25,8 +26,7 @@ export async function getPhotographerById(id){
     const photographerFiltered = photographers.find(photographer => {
         return photographer.id === id;
     });
-    
-    console.log(photographerFiltered);   
+    console.log(photographerFiltered);
 }
 
 

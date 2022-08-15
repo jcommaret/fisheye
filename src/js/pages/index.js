@@ -16,7 +16,7 @@ export async function displayPhotographers(photographers) {
     });
 };
 
-async function init() {
+export async function init() {
     const { photographers } = await getData();
     displayPhotographers(photographers);
 };

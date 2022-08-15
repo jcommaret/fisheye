@@ -13,17 +13,38 @@ export async function getData() {
     }
 }
 
-// GetMedias
-function getMedias(){
+// Medias
+export function getMedias(){
     fetch(api_url)
     .then(response => response.json())
     .then(data => {
         console.log(data.media);
     })
 };
-
-// GetMediasByID
+// Medias by id
 export function getMediaById(id){
     const medias = getMedias();
     return medias.filter(media => { return media.photographerId === id });
 }
+
+// Photographers
+export function getPhotographers(){
+    fetch(api_url)
+    .then(response => response.json())
+    .then(data => {
+        return data.photographers;
+    })
+};
+// Photographers by id
+export function getPhotographerById(id){
+    const photographers = getPhotographers();
+    console.log(photographers);
+    const photographerFiltered = photographers.filter(photographer => {
+        return photographer.id.includes(id);
+    });
+    
+    console.log(photographerFiltered);   
+}
+
+
+

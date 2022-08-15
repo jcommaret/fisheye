@@ -2,9 +2,9 @@ import { getData } from "../fetch_api";
 import { mediaFactory } from "../factories/media";
 
 export async function renderMedias(){
-  // assigne a medias le tableau renvoyé par le "get medias"
-  const media = await getMedias();    
-  // retourne le tableau photographers seulement une fois
+    // assigne a medias le tableau renvoyé par le "get medias"
+    const media = await getMedias();    
+    // retourne le tableau photographers seulement une fois
 }
 
 export async function displayMedias(media) {

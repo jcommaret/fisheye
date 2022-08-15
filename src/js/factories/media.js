@@ -1,10 +1,3 @@
-var params = new URLSearchParams(window.location.search),
-    pid = params.get("photographerId");
-
-
-console.log(pid);
-
-
 export function mediaFactory(data) {
   const { photographerId, id, title, image, like } = data;
   const photo = require (`images/images/${image}`);

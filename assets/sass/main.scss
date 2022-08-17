@@ -1,0 +1,14 @@
+// Common //
+@use "base/common";
+
+// Pages
+@use "pages/parts/header.scss";
+@use "pages/index";
+@use "pages/photographers";
+
+// Components
+@use "components/modal.scss";
+
+body{
+  background-color: aqua;
+}

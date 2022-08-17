@@ -28,6 +28,3 @@ export async function getPhotographerById(id){
     });
     console.log(photographerFiltered);
 }
-
-
-

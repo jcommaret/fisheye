@@ -9,7 +9,7 @@ export async function renderPhotographers(){
 
 export async function displayPhotographers(photographers) {
     const photographersSection = document.querySelector(".photographer_section");
-    photographers.forEach((photographer) => {
+    photographersFiltered.forEach((photographer) => {
         const photographerModel = photographerFactory(photographer);
         const userCardDOM = photographerModel.getUserCardDOM();
         photographersSection.appendChild(userCardDOM);

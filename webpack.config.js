@@ -5,8 +5,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 let config = {
   entry : {
-    home : "./js/home.js",
-    photographers : "./js/photographer.js",
+    home : "./js/app.js",
+    photographers : "./js/pages/photographer.js",
   },
   output : {
     clean : true,

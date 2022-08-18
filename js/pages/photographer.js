@@ -1,5 +1,6 @@
-import { getMediaById } from "../fetch_api";
+import '../../sass/main.scss';
 
+import { getMediaById } from "../fetch_api";
 const init = async () => {
   const id = new URL(document.location).searchParams.get("id");
   // const id = params.get("photographerid"); 

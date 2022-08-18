@@ -1,15 +1,19 @@
 const path = require('path');
 const dev = process.env.NODE_ENV === "dev";
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 let config = {
-  entry : "./assets/app.js",
-  watch : dev,
-  output : {
-    path : path.resolve("./dist"),
-    filename : "bundle.js",
-    publicPath: "/dist/",
+  entry : {
+    home : "./js/home.js",
+    photographers : "./js/photographer.js",
   },
+  output : {
+    clean : true,
+    path : path.resolve(__dirname, 'dist'),
+    filename : "[name].bundle.js"
+  },
+  watch : dev,
   mode:"development",
   devtool: "eval-cheap-module-source-map",
   module: {
@@ -38,7 +42,9 @@ let config = {
       }
     ]
   },
-  plugins:[],
+  plugins:[
+    new CleanWebpackPlugin(),
+  ],
   optimization: {
     minimizer: [
       new ImageMinimizerPlugin({

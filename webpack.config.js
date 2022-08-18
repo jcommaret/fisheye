@@ -37,6 +37,10 @@ let config = {
         type: "asset",
       },
       {
+        test: /\.(mp4)$/i,
+        type: "asset",
+      },
+      {
         test: /\.json$/,
         type: 'asset',
       }

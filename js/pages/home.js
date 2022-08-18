@@ -1,3 +1,6 @@
+// sass
+import '../../sass/main.scss';
+
 import { getData } from "../fetch_api"
 import { photographerFactory } from "../factories/photographer";
 

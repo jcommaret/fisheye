@@ -1,8 +1,10 @@
-// sass
+// Imports SCSS
 import '../../sass/main.scss';
 
+// Imports JS
 import { getData } from "../fetch_api"
 import { photographerFactory } from "../factories/photographer";
+
 
 export async function displayData(photographers) {
     const photographersSection = document.querySelector(".photographer_section");

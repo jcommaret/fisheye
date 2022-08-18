@@ -1,7 +1,7 @@
-// sass
+// Imports SCSS
 import '../../sass/main.scss';
 
-// js
+// // Imports JS
 import { getMediaById } from "../fetch_api";
 import { mediaFactory } from "../factories/media";
 
@@ -18,8 +18,7 @@ const init = async () => {
   const id = new URL(document.location).searchParams.get("id");
   // const id = params.get("photographerid"); 
   const medias = await getMediaById(parseInt(id))
-  displayMedias(medias);
-  
+  displayMedias(medias); 
   console.log(medias);
   console.log(id);
 }

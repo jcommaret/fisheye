@@ -1,5 +1,6 @@
-import { log2 } from './js/index';
-
+import {renderPhotographers, displayPhotographers, init} from "./js/pages/index";
 import './sass/main.scss';
 
-log2();
+renderPhotographers()
+displayPhotographers()
+init()

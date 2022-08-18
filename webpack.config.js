@@ -1,5 +1,6 @@
 const path = require('path');
 const dev = process.env.NODE_ENV === "dev";
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 let config = {
   entry : "./assets/app.js",
@@ -9,7 +10,8 @@ let config = {
     filename : "bundle.js",
     publicPath: "/dist/",
   },
-  devtool: "cheap-module-source-map",
+  mode:"development",
+  devtool: false,
   module: {
     rules: [
       {
@@ -26,9 +28,31 @@ let config = {
         test: /\.(sass|scss|css)$/,
         use: ['style-loader','css-loader','sass-loader'],
       },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        type: "asset",
+      },
     ]
   },
-  plugins:[]
+  plugins:[],
+  optimization: {
+    minimizer: [
+      new ImageMinimizerPlugin({
+        minimizer: {
+          implementation: ImageMinimizerPlugin.imageminMinify,
+          options: {
+            // Lossless optimization with custom option
+            // Feel free to experiment with options for better result for you
+            plugins: [
+              ["gifsicle", { interlaced: true }],
+              ["jpegtran", { progressive: true }],
+              ["optipng", { optimizationLevel: 5 }],
+            ],
+          },
+        },
+      }),
+    ],
+  },
 }
  
 module.exports = config

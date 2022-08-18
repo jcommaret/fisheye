@@ -1,5 +1,3 @@
-
-
 export function mediaFactory(data) {
   const { photographerId, id, title, image, like } = data;
   const photo = require (`../../images/images/${image}`);

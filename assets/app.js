@@ -1,6 +1,9 @@
-import {renderPhotographers, displayPhotographers, init} from "./js/pages/index";
+import { getData } from "./js/fetch_api";
+import {getPhotographers, displayData, init} from "./js/pages/index";
 import './sass/main.scss';
 
-renderPhotographers()
-displayPhotographers()
+getPhotographers();
+displayData();
 init()
+
+console.log(getData());

@@ -9,9 +9,7 @@ export async function getData() {
     } catch (error) {
         console.log(error);
     }
-    
 }
-
 // Medias by id
 export async function getMediaById(id){
     const medias = await getData();
@@ -21,7 +19,7 @@ export async function getMediaById(id){
     console.log(mediaFiltered);
 }
 
-export async function getPhotographers(){
+export async function getDataP(){
     const photographers = await getData();
     console.log(photographers);
 }

@@ -11,7 +11,7 @@ let config = {
     publicPath: "/dist/",
   },
   mode:"development",
-  devtool: false,
+  devtool: "eval-cheap-module-source-map",
   module: {
     rules: [
       {

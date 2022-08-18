@@ -1,24 +1,29 @@
-import { getData } from "../fetch_api";
-import { photographerFactory } from "../factories/photographer";
+import { getDataP } from "../fetch_api"
+import { photographerFactory } from "../../js/factories/photographer";
 
-export async function renderPhotographers(){
-    // assigne a photographers le tableau renvoyé par le "get photographers"
-    const photographers = await getData();    
-    // retourne le tableau photographers seulement une fois
+export async function getPhotographers() {
+    // Penser à remplacer par les données récupérées dans le json
+    const photographers = await getDataP();
+        
+    // et bien retourner le tableau photographers seulement une fois
+    return ({
+        photographers: [...photographers]})
 }
 
-export async function displayPhotographers(photographers) {
+export async function displayData(photographers) {
     const photographersSection = document.querySelector(".photographer_section");
-    photographersFiltered.forEach((photographer) => {
+
+    photographers.forEach((photographer) => {
         const photographerModel = photographerFactory(photographer);
         const userCardDOM = photographerModel.getUserCardDOM();
         photographersSection.appendChild(userCardDOM);
     });
 };
 
-export function init() {
-    const { photographers } = getData();
-    displayPhotographers(photographers);
+export async function init() {
+    // Récupère les datas des photographes
+    const { photographers } = await getPhotographers();
+    displayData(photographers);
 };
 
 init();

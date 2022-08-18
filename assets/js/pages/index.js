@@ -6,9 +6,10 @@ export async function getPhotographers() {
     // Penser à remplacer par les données récupérées dans le json
     const photographers = await getData();
         
+        
     // et bien retourner le tableau photographers seulement une fois
     return ({
-        photographers: [photographers]})
+        photographers: [...photographers.photographers]})
 }
 
 export async function displayData(photographers) {

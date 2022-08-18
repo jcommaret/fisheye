@@ -129,7 +129,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "getData": () => (/* binding */ getData),
 /* harmony export */   "getMediaById": () => (/* binding */ getMediaById),
-/* harmony export */   "getPhotographerById": () => (/* binding */ getPhotographerById)
+/* harmony export */   "getPhotographers": () => (/* binding */ getPhotographers)
 /* harmony export */ });
 /* harmony import */ var _data_photographers_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../data/photographers.json */ "./data/photographers.json");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
@@ -143,7 +143,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 function getData() {
   return _getData.apply(this, arguments);
-}
+} // Medias by id
 
 function _getData() {
   _getData = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
@@ -181,8 +181,6 @@ function _getData() {
   return _getData.apply(this, arguments);
 }
 
-console.log(getData); // Medias by id
-
 function getMediaById(_x) {
   return _getMediaById.apply(this, arguments);
 }
@@ -214,13 +212,13 @@ function _getMediaById() {
   return _getMediaById.apply(this, arguments);
 }
 
-function getPhotographerById(_x2) {
-  return _getPhotographerById.apply(this, arguments);
+function getPhotographers() {
+  return _getPhotographers.apply(this, arguments);
 }
 
-function _getPhotographerById() {
-  _getPhotographerById = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(id) {
-    var photographers, photographerFiltered;
+function _getPhotographers() {
+  _getPhotographers = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
+    var photographers;
     return _regeneratorRuntime().wrap(function _callee3$(_context3) {
       while (1) {
         switch (_context3.prev = _context3.next) {
@@ -230,19 +228,16 @@ function _getPhotographerById() {
 
           case 2:
             photographers = _context3.sent;
-            photographerFiltered = photographers.find(function (photographer) {
-              return photographer.id === id;
-            });
-            console.log(photographerFiltered);
+            console.log(photographers);
 
-          case 5:
+          case 4:
           case "end":
             return _context3.stop();
         }
       }
     }, _callee3);
   }));
-  return _getPhotographerById.apply(this, arguments);
+  return _getPhotographers.apply(this, arguments);
 }
 
 /***/ }),

@@ -1,7 +1,9 @@
 import { getData } from "./js/fetch_api";
-import {getPhotographers, displayData, init} from "./js/pages/index";
+import { photographerFactory } from "./js/factories/photographer";
+import { getPhotographers, displayData, init} from "./js/pages/index";
 import './sass/main.scss';
 
+photographerFactory();
 getPhotographers();
 displayData();
 init()

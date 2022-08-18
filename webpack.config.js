@@ -32,6 +32,10 @@ let config = {
         test: /\.(jpe?g|png|gif|svg)$/i,
         type: "asset",
       },
+      {
+        test: /\.json$/,
+        type: 'asset',
+      }
     ]
   },
   plugins:[],

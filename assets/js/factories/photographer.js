@@ -1,3 +1,7 @@
+import { getPhotographers } from "../fetch_api";
+
+getPhotographers();
+
 export function photographerFactory(data) {
     const { name, portrait } = data;
 

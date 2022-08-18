@@ -1,4 +1,4 @@
-import jsonData from "../../data/photographers.json";
+const jsonData = require('../../data/photographers.json')
 
 export async function getData() {
     // fetch de l'api
@@ -19,7 +19,7 @@ export async function getMediaById(id){
     console.log(mediaFiltered);
 }
 
-export async function getDataP(){
+export async function getPhotographers(){
     const photographers = await getData();
     console.log(photographers);
 }

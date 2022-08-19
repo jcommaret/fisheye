@@ -1,6 +1,7 @@
 export function mediaFactory(data) {
   const { photographerId, id, title, image, likes } = data;
-  const photo = require (`../../images/images/${image}`);
+  const photo = `../../images/images/${image}`;
+  
   function getMediaCardDOM() {
 
       const article = document.createElement( 'div' );       

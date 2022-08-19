@@ -8,7 +8,7 @@ export function mediaFactory(data) {
       // Crée l'element image
       const img = document.createElement( 'img' );
       img.setAttribute("src", photo)
-      img.setAttribute("alt", title )
+      img.setAttribute("alt", "titre de l'image :" + title )
       img.classList.add("media_photo");
       article.appendChild(img);
       

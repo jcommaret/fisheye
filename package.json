@@ -12,13 +12,15 @@
     "imagemin-jpegtran": "^7.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^10.0.1",
+    "progress-bar-webpack-plugin": "^2.1.0",
     "sass": "^1.54.4",
     "sass-loader": "^13.0.2",
     "sharp": "^0.30.7",
     "style-loader": "^3.3.1",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.10.0"
+    "webpack-dev-server": "^4.10.0",
+    "webpack-image-resize-loader": "^5.0.0"
   },
   "name": "fisheye",
   "version": "1.0.0",
@@ -74,8 +76,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "NODE_ENV=dev webpack --watch",
-    "serve": "webpack serve",
+    "dev": "NODE_ENV=dev webpack",
     "prod": "webpack"
   },
   "repository": {

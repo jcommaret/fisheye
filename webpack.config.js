@@ -2,8 +2,13 @@ const path = require('path');
 const dev = process.env.NODE_ENV === "dev";
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const chalk = require("chalk");
+const ProgressBarPlugin = require("progress-bar-webpack-plugin");
 
 let config = {
+  mode:"development",
+  watch : dev,
+  devtool: "eval-cheap-module-source-map",
   entry : {
     home : "./js/app.js",
     photographers : "./js/pages/photographer.js",
@@ -13,9 +18,6 @@ let config = {
     path : path.resolve(__dirname, 'dist'),
     filename : "[name].bundle.js"
   },
-  watch : dev,
-  mode:"development",
-  devtool: "eval-cheap-module-source-map",
   module: {
     rules: [
       {
@@ -43,11 +45,14 @@ let config = {
       {
         test: /\.json$/,
         type: 'asset',
-      }
+      },
     ]
   },
   plugins:[
     new CleanWebpackPlugin(),
+    new ProgressBarPlugin({
+      format: `  :msg [:bar] ${chalk.green.bold(":percent")} (:elapsed s)`,
+    }),
   ],
   optimization: {
     minimizer: [
@@ -69,4 +74,5 @@ let config = {
   },
 }
  
+
 module.exports = config

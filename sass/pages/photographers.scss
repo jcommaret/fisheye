@@ -93,18 +93,21 @@
   .medias_section{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap:20px;
-    padding:20px;
     @include m.desktop{
       padding: 100px;
     }
     img{
       display:flex;
       flex-direction: column;
-      width: 300px;
       object-fit: cover;
       height: 300px;
+      width: 100%;
       @include m.desktop{
+        object-fit: cover;
+        height: 300px;
+        width: 300px;  
         flex-direction: row;
       }
       &.portrait{
@@ -115,11 +118,10 @@
       display: flex;
       justify-content: space-between;
       h2, p{
-        font-size: 24px;
+        font-size: 18px;
         color:c.$red;  
       }
       h2{
-        width:240px;
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;

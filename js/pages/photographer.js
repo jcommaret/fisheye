@@ -19,8 +19,6 @@ const init = async () => {
   // const id = params.get("photographerid"); 
   const medias = await getMediaById(parseInt(id))
   displayMedias(medias); 
-  console.log(medias);
-  console.log(id);
 }
 
 init();

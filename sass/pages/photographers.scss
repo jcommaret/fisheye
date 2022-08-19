@@ -105,7 +105,6 @@
       height: 300px;
       width: 100%;
       @include m.desktop{
-        object-fit: cover;
         height: 300px;
         width: 300px;  
         flex-direction: row;

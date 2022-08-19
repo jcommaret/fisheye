@@ -104,6 +104,7 @@
       object-fit: cover;
       height: 300px;
       width: 100%;
+      background: c.$bck-grey;
       @include m.desktop{
         height: 300px;
         width: 300px;  

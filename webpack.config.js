@@ -4,11 +4,12 @@ const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const chalk = require("chalk");
 const ProgressBarPlugin = require("progress-bar-webpack-plugin");
+const ErrorOverlayPlugin = require('error-overlay-webpack-plugin')
 
 let config = {
   mode:"development",
   watch : dev,
-  devtool: "eval-cheap-module-source-map",
+  devtool: "cheap-module-source-map",
   entry : {
     home : "./js/app.js",
     photographers : "./js/pages/photographer.js",
@@ -49,10 +50,13 @@ let config = {
     ]
   },
   plugins:[
+    
     new CleanWebpackPlugin(),
     new ProgressBarPlugin({
       format: `  :msg [:bar] ${chalk.green.bold(":percent")} (:elapsed s)`,
     }),
+    new ErrorOverlayPlugin(),
+    
   ],
   optimization: {
     minimizer: [

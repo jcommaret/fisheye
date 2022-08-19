@@ -29,4 +29,3 @@ export function mediaFactory(data) {
   }
   return { id, photographerId, title, image, likes, getMediaCardDOM }
 }
-

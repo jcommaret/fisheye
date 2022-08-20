@@ -87,6 +87,7 @@
 }
 
 .medias_container{
+  margin: 0 100px;
   display:flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -96,7 +97,7 @@
     justify-content: center;
     gap:20px;
     @include m.desktop{
-      padding: 100px;
+      
     }
     img{
       display:flex;

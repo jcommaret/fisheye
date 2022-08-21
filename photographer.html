@@ -22,12 +22,15 @@
                   <div class="tagline">Plop !</div>
                   <div class="price">plein d'€</div>
                </div>
+               
                <div class="contact">
-                  <btn class="btn">Contact</btn>
+                  <btn class="btn-contact modal-toogle">Contactez-moi</btn>
                </div>
+              
                <div class="photograph-photo">
                   <img class=portrait src="images/photographers/EllieRoseWilkens.jpg">
                </div>
+
             </div>
          </div>
          
@@ -40,6 +43,48 @@
             <div class="medias_section"></div>
          </main>
       </div>
-   <script src="dist/photographers.bundle.js"></script>
+
+      <div class="center">
+         <div class="modal">
+            <div class="modal-content">
+               <span class="btn-close modal-toogle"></span>
+               <div class="modal-header">
+                  <h2>Contactez-moi</h2>
+                  <p>Mimi Keel</p>
+               </div>
+               <div class="modal-body">
+                  <form>
+                     <div>
+                        <label for="firstname">Prénom</label>
+                        <input type="text" class="firstname"/>
+                     </div>
+                     <div>
+                        <label for="lastname">Nom</label>
+                        <input type="text" class="lastname">
+                     </div>
+                     <div>
+                        <label for="email">Email</label>
+                        <input type="email" class="email">
+                     </div>
+                     <div>
+                        <label for="message">Votre message</label>
+                        <input type="textarea" class="message">
+                     </div>
+                     <div>
+                        <btn class="btn-contact">Envoyer</btn>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+   
+
+
+
+
+
+
+      <script src="dist/photographers.bundle.js"></script>
    </body>
 </html>

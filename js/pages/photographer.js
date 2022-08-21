@@ -1,6 +1,6 @@
 // Imports SCSS
 import '../../sass/main.scss';
-
+import "../utils/modal"; 
 // // Imports JS
 import { getMediaById } from "../fetch_api";
 import { mediaFactory } from "../factories/media";

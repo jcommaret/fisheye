@@ -23,6 +23,8 @@
       font-family: f.$dm-sans;
       line-height: 83px;
       letter-spacing: 0em;
+      max-width: 300px;
+      text-overflow: ellipsis;
     }
     .location{
       font-size: 24px;
@@ -56,23 +58,6 @@
       }
       &.portrait{
         object-fit: cover;  
-      }
-    }
-    .contact_button {
-      font-size: 14px;
-      font-weight: bold;
-      color: c.$white;
-      padding: 11px;
-      width: 100px;
-      min-height:35px;
-      border: none;
-      background-color: c.$red;
-      border-radius: 5px;
-      cursor: pointer;
-      @include m.desktop{
-        font-size: 20px;
-        width: 170px;
-        height: 70px;
       }
     } 
   }

@@ -1,5 +1,7 @@
 @use "../utils/colors.scss" as c;
 @use "../utils/mixins.scss" as m;
+@use "../animations/modal.scss";
+
 .center{
 	display:flex;
 	justify-content: center;
@@ -8,7 +10,7 @@
   display: none;
   position: fixed;
   z-index: 3000;
-  top: 150px;
+  top: 1%;
 	width: 600px;
 	border-radius: 5px;
   background-color: c.$salmon;
@@ -32,16 +34,18 @@
   	animation-duration: 0.5s;
   	animation-timing-function: ease-in-out;
 	}
-  header {
+  &-header {
   	justify-content: space-between;
-    width: 100%;      
+    width: 100%;    
+
     img {
       cursor: pointer;
     }
 		h2 {
 			font-size: 64px;
 			font-weight: normal;
-			text-align: center;
+			text-align: left;
+			;
 		}
 	}
 	form {
@@ -67,30 +71,9 @@
         border-radius: 5px;
       }
     }
-}
-
-@keyframes open {
-	from {
-		opacity: 0;
-		transform: translateY(-150px);
-	}
-	to {
-		opacity: 1;
-	}
-}
-
-@keyframes hide {
-	0% {
-		opacity: 1;
+		#message{
+			height: 150px;
 		}
-	90% {
-		opacity: 0;
-	}
-	100% {
-		display:none;
-		opacity: 0;
-		z-index:-1;
-	}
 }
 
 .btn{

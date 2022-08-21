@@ -1,7 +1,10 @@
 // Imports SCSS
-import '../../sass/main.scss';
-import "../utils/modal"; 
-// // Imports JS
+import '../../sass/main.scss'; 
+
+// Import modale (se présente uniquement au clic)
+import { Modal } from '../utils/modal';
+
+// import JS functions
 import { getMediaById } from "../fetch_api";
 import { mediaFactory } from "../factories/media";
 
@@ -19,6 +22,8 @@ const init = async () => {
   // const id = params.get("photographerid"); 
   const medias = await getMediaById(parseInt(id))
   displayMedias(medias); 
+
+  
 }
 
 init();

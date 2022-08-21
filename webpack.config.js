@@ -5,11 +5,16 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const chalk = require("chalk");
 const ProgressBarPlugin = require("progress-bar-webpack-plugin");
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin')
+const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
+const smp = new SpeedMeasurePlugin();
 
-let config = {
+let config = smp.wrap({
   mode:"development",
   watch : dev,
   devtool: "cheap-module-source-map",
+  cache: {
+    type: 'filesystem',
+  },
   entry : {
     home : "./js/app.js",
     photographers : "./js/pages/photographer.js",
@@ -27,7 +32,9 @@ let config = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
+            presets: ['@babel/preset-env'],
+            cacheCompression: false,
+            cacheDirectory: true,
           }
         }
       },
@@ -79,7 +86,7 @@ let config = {
       }),
     ],
   },
-}
+})
  
 
 module.exports = config

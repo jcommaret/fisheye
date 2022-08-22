@@ -57,10 +57,9 @@ let config = smp.wrap({
     ]
   },
   plugins:[
-    
     new CleanWebpackPlugin(),
     new ProgressBarPlugin({
-      format: `  :msg [:bar] ${chalk.green.bold(":percent")} (:elapsed s)`,
+      format: `:msg [:bar] ${chalk.green.bold(":percent")} (:elapsed s)`,
     }),
     new ErrorOverlayPlugin(),
     

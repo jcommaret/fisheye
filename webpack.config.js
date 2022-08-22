@@ -62,7 +62,6 @@ let config = smp.wrap({
       format: `:msg [:bar] ${chalk.green.bold(":percent")} (:elapsed s)`,
     }),
     new ErrorOverlayPlugin(),
-    
   ],
   optimization: {
     removeAvailableModules: false,

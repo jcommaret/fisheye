@@ -7,11 +7,20 @@ modalBtn.forEach((btn) => btn.addEventListener("click", Modal));
 
 // Modal function : check if modal has class open and add it if not, remove it if this is the case 
 export function Modal() {
-  if (!modal.classList.contains("open")){
-    modal.classList.remove("hide");
-    modal.classList.add("open");
+    if (!modal.classList.contains("open")){
+      modal.classList.remove("hide");
+      modal.classList.add("open");
     }
     else{
       modal.classList.replace("open","hide");
     }
+    // Close modal if keyup on escape
+  document.addEventListener('keyup', function(event){
+	if(event.key === "Escape"){
+		modal.className = "modal hide";
+    setTimeout(()=>{
+      modal.style.display = 'none';
+    },200)
+	}
+});
 }

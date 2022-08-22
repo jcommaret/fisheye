@@ -9,6 +9,7 @@ export async function getData() {
         console.log(error);
     }
 }
+
 // Medias by id
 export async function getMediaById(id){
     const { media } = await getData();

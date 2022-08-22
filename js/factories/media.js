@@ -8,12 +8,18 @@ export function mediaFactory(data) {
 
       const article = document.createElement( 'div' );       
       article.classList.add("media");
+
+      const btn = document.createElement('btn');
+      btn.classList.add("lightbox-toogle");
+      
       // Crée l'element image
       const img = document.createElement( 'img' );
       img.setAttribute("src", photo)
       img.setAttribute("alt", "titre de l'image :" + title )
       img.classList.add("media_photo");
-      article.appendChild(img);
+      img.classList.add("lightbox-toogle");
+      btn.appendChild(img)
+      article.appendChild(btn);
       
       const div = document.createElement('div');
       div.setAttribute("class", "picinfo");
@@ -30,4 +36,22 @@ export function mediaFactory(data) {
       return (article);
   }
   return { id, photographerId, title, image, likes, getMediaCardDOM }
+}
+
+// modal button
+const lightboxBtn = document.querySelectorAll(".lightbox-toogle");
+// modal window
+const lightbox = document.querySelector(".lightbox");
+// launch modal function on every click on Modal btn
+lightboxBtn.forEach((btn) => btn.addEventListener("click", Lightbox));
+
+// Modal function : check if modal has class open and add it if not, remove it if this is the case 
+export function Lightbox() {
+  if (!lightbox.classList.contains("open")){
+    lightbox.classList.remove("hide");
+    lightbox.classList.add("open");
+    }
+    else{
+      lightbox.classList.replace("open","hide");
+    }
 }

@@ -3,7 +3,7 @@ import '../../sass/main.scss';
 
 // Import modale (se présente uniquement au clic)
 import { Modal } from '../utils/modal';
-
+import "../utils/form"
 // import JS functions
 import { getMediaById } from "../fetch_api";
 import { mediaFactory } from "../factories/media";

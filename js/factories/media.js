@@ -7,7 +7,6 @@ class Media{
     this.date = data.date;
     this.price = data.price;
   }
-  
   render(){
     return `<div class="media">
               <img src="https://via.placeholder.com/No+Media+To+Render">
@@ -22,7 +21,11 @@ class Image extends Media{
   }
   render(){
     return `<div class="media">
-              <img src="${this.image}">
+              <img class="square" src="./images/images/${this.image}">
+              <div class="info">
+                <h2>${this.title}</h2>
+                <p>♥ ${this.likes}</p>
+              </div>
             </div>`;
           }
 }
@@ -34,7 +37,11 @@ export class Video extends Media{
   }
   render(){
     return `<div class="media">
-              <video src="${this.video}">
+              <video class="square" src="./images/images/${this.video}"></video>
+              <div class="info">
+                <h2>${this.title}</h2>
+                <p>♥ ${this.likes}</p>
+              </div>
             </div>`;
   }
 }

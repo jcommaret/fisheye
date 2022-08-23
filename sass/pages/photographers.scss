@@ -84,7 +84,7 @@
     @include m.desktop{
       
     }
-    img{
+    img, video{
       display:flex;
       flex-direction: column;
       object-fit: cover;
@@ -96,11 +96,11 @@
         width: 300px;  
         flex-direction: row;
       }
-      &.portrait{
+      &.square{
         object-fit: cover;
       }
     }
-    .picinfo{
+    .info{
       display: flex;
       justify-content: space-between;
       h2, p{

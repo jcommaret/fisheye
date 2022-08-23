@@ -13,7 +13,7 @@ export async function displayMedias(media) {
   media.forEach((m) => {
     const type = m.image? "image" : "video" ;   
     const mediaModel = new MediaFactory(m, type);
-    mediasSection.appendChild(mediaModel.render());
+    mediasSection.innerHTML=mediaModel.render();
   });
 };
 

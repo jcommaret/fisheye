@@ -14,13 +14,14 @@ export function Modal() {
     else{
       modal.classList.replace("open","hide");
     }
+    
     // Close modal if keyup on escape
-  document.addEventListener('keyup', function(event){
-	if(event.key === "Escape"){
-		modal.className = "modal hide";
-    setTimeout(()=>{
-      modal.style.display = 'none';
-    },200)
-	}
-});
+    document.addEventListener('keyup', function(event){
+	  if(event.key === "Escape"){
+		  modal.className = "modal hide";
+      setTimeout(()=>{
+        modal.style.display = 'none';
+      },200)
+	  }
+  });
 }

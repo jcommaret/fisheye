@@ -1,3 +1,5 @@
+////////////// START MODALE /////////////
+
 // modal button
 const modalBtn = document.querySelectorAll(".modal-toogle");
 // modal window
@@ -25,3 +27,5 @@ export function Modal() {
 	  }
   });
 }
+
+////////////// END MODALE /////////////

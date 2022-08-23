@@ -1,8 +1,9 @@
 // Imports SCSS
 import '../../sass/main.scss'; 
 
-// Import modale (se présente uniquement au clic)
+// Import modale et lightbox
 import { Modal } from '../utils/modal';
+import { LightBox } from '../utils/lightbox';
 
 import "../utils/form"
 // import JS functions

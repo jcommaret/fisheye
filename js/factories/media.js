@@ -21,13 +21,13 @@ class Image extends Media{
   }
   render(){
     return `<div class="media">
-              <img class="square" src="./images/images/${this.image}">
+              <img class="square lightbox-toogle" src="./images/images/${this.image}">
               <div class="info">
                 <h2>${this.title}</h2>
                 <p>♥ ${this.likes}</p>
               </div>
             </div>`;
-          }
+    }
 }
 
 export class Video extends Media{

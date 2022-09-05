@@ -3,7 +3,6 @@ import '../../sass/main.scss';
 
 // Import modale et lightbox
 import { Modal } from '../utils/modal';
-// import { LightBox } from '../utils/lightbox';
 
 import "../utils/form"
 // import JS functions
@@ -13,12 +12,10 @@ import { MediaFactory } from "../factories/media";
 // Working
 export async function displayMedias(media) {
   const mediasSection = document.querySelector(".medias_section");
-  // const lightboxSection = document.querySelector(".lightbox_section");
   media.forEach((m) => {
     const type = m.image? "image" : "video" ;   
     const mediaModel = new MediaFactory(m, type);
-    mediasSection.innerHTML+=mediaModel.render();
-    // lightboxSection.innerHTML+=mediaModel.render();
+    mediasSection.innerHTML+=mediaModel.render();  
   });
 };
 

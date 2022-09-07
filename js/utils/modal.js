@@ -25,10 +25,14 @@ const onCloseModal = () => {
 
 ////////////// START MODALE /////////////
 
+
+
 // modal button
 const modalBtn = document.querySelectorAll(".modal-toogle");
 // modal window
 const modal = document.querySelector(".modal");
+const fields = Array.of(modal.querySelectorAll(".fields"));
+
 // launch modal function on every click on Modal btn
 modalBtn.forEach((btn) => btn.addEventListener("click", Modal));
 
@@ -41,14 +45,31 @@ export function Modal() {
     else{
       modal.classList.replace("open","hide");
     }
-    
     // Close modal if keyup on escape
-    document.addEventListener('keyup', function(event){
-	  if(event.key === "Escape"){
-		  modal.className = "modal hide";
-      setTimeout(()=>{
-        modal.style.display = 'none';
-      },200)
+      modal.addEventListener('keyup', function(event){
+      if(event.key === "Escape"){
+        modal.className = "modal hide";
+        setTimeout(()=>{
+          modal.style.display = 'none';
+        },200)
+
+      if(event.key === "Tab"){
+         const current = event.target;
+         if (current===fields[fields.length-1]){
+            fields[0].focus();
+         };
+      };
+      
+      if(event.shiftKey && event.keyCode == 9){
+        const current = event.target;
+        if (current===fields[fields.length-1]){
+           fields[0].focus();
+        };
+     };
 	  }
   });
 }
+
+// tab // shift // shift tab
+// event listener keyup
+

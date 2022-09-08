@@ -33,7 +33,7 @@ export function Modal() {
          };
       };
       
-      if(event.shiftKey && event.keyCode == 9){
+      if(event.shiftKey && event.key === "Tab"){
         const current = event.target;
         if (current===fields[fields.length-1]){
            fields[0].focus();

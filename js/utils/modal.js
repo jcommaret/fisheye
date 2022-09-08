@@ -18,27 +18,34 @@ export function Modal() {
     else{
       modal.classList.replace("open","hide");
     }
-    // Close modal if keyup on escape
-      modal.addEventListener('keyup', function(event){
+
+    modal.addEventListener('keyup', function(event){
+      // close modal on escape
       if(event.key === "Escape"){
         modal.className = "modal hide";
         setTimeout(()=>{
           modal.style.display = 'none';
-        },200)
+      },200)
 
+      // actions sur le tab
       if(event.key === "Tab"){
          const current = event.target;
          if (current===fields[fields.length-1]){
             fields[0].focus();
          };
       };
-      
+
+      // actions sur le shift + tab
       if(event.shiftKey && event.key === "Tab"){
         const current = event.target;
         if (current===fields[fields.length-1]){
            fields[0].focus();
         };
-     };
+      };
+
+
+
+
 	  }
   });
 }

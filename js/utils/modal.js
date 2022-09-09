@@ -15,12 +15,13 @@ export function Modal() {
       modal.classList.remove("hide");
       modal.classList.add("open");
     }
+    
     else{
       modal.classList.replace("open","hide");
     }
 
     modal.addEventListener('keyup', function(event){
-      // close modal on escape
+      // Close modale au moment de l'escape
       if(event.key === "Escape"){
         modal.className = "modal hide";
         setTimeout(()=>{
@@ -42,10 +43,6 @@ export function Modal() {
            fields[0].focus();
         };
       };
-
-
-
-
 	  }
   });
 }

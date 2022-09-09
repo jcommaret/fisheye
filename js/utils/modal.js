@@ -4,8 +4,6 @@ const modalBtn = document.querySelectorAll(".modal-toogle");
 const modal = document.querySelector(".modal");
 const fields = Array.of(modal.querySelectorAll(".fields"));
 
-console.log(fields);
-
 // launch modal function on every click on Modal btn
 modalBtn.forEach((btn) => btn.addEventListener("click", Modal));
 
@@ -20,30 +18,26 @@ export function Modal() {
       modal.classList.replace("open","hide");
     }
 
+
     modal.addEventListener('keyup', function(event){
+      console.log(event.target);
       // Close modale au moment de l'escape
       if(event.key === "Escape"){
         modal.className = "modal hide";
         setTimeout(()=>{
           modal.style.display = 'none';
-      },200)
-
+        },200)
+      };
       // actions sur le tab
       if(event.key === "Tab"){
-         const current = event.target;
-         if (current===fields[fields.length-1]){
-            fields[0].focus();
-         };
+        if (current===fields[fields.length-1]){
+          fields[0].focus();
+        };
       };
 
       // actions sur le shift + tab
-      if(event.shiftKey && event.key === "Tab"){
-        const current = event.target;
-        if (current===fields[fields.length-1]){
-           fields[0].focus();
-        };
-      };
-	  }
+      
+	  
   });
 }
 

@@ -2,7 +2,7 @@
 const modalBtn = document.querySelectorAll(".modal-toogle");
 // modal window
 const modal = document.querySelector(".modal");
-const fields = Array.of(modal.querySelectorAll(".fields"));
+const fields = Array.from(modal.querySelectorAll(".fields"));
 
 // launch modal function on every click on Modal btn
 modalBtn.forEach((btn) => btn.addEventListener("click", Modal));
@@ -18,9 +18,10 @@ export function Modal() {
       modal.classList.replace("open","hide");
     }
 
-
-    modal.addEventListener('keyup', function(event){
-      console.log(event.target);
+    let previous = undefined;
+    let next = undefined;
+    
+    document.addEventListener('keyup', function(event){
       // Close modale au moment de l'escape
       if(event.key === "Escape"){
         modal.className = "modal hide";
@@ -28,12 +29,27 @@ export function Modal() {
           modal.style.display = 'none';
         },200)
       };
+
+      console.log(previous);
       // actions sur le tab
       if(event.key === "Tab"){
-        if (current===fields[fields.length-1]){
+        event.preventDefault()
+        if (previous===fields[fields.length-1]){
           fields[0].focus();
         };
       };
+
+      console.log(next);
+       // actions sur le shift + tab
+      if(event.shiftKey && event.key === "Tab"){
+        event.preventDefault()
+        if (next===fields[fields.length+1]){
+          fields[0].focus();
+        };
+      };
+
+      next = event.target;
+      previous = event.target;
 
       // actions sur le shift + tab
       

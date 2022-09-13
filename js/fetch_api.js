@@ -16,7 +16,14 @@ export async function getMediaById(id){
     return media.filter(m => m.photographerId === id );
 }
 
+// Tout les photographes
 export async function getPhotographers(){
     const photographers = await getData();
     return photographers;
+}
+
+// Photographes par id
+export async function getPhotographersById(id){
+    const { photographers } = await getData();
+    return photographers.filter(p => p.photographerId === id );
 }

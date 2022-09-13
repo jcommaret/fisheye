@@ -6,7 +6,7 @@ import { Modal } from '../utils/modal';
 
 import "../utils/form"
 // import JS functions
-import { getMediaById } from "../fetch_api";
+import { getMediaById, getPhotographersById } from "../fetch_api";
 import { MediaFactory } from "../factories/media";
 
 // Working
@@ -21,8 +21,10 @@ export async function displayMedias(media) {
 
 const init = async () => {
   const id = new URL(document.location).searchParams.get("id");
-  // const id = params.get("photographerid"); 
   const medias = await getMediaById(parseInt(id))
+  const photographer = await getPhotographersById(parseInt(id))  
+  
+  
   displayMedias(medias);
 }
 

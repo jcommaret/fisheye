@@ -12,6 +12,7 @@ export function Modal() {
     if (!modal.classList.contains("open")){
       modal.classList.remove("hide");
       modal.classList.add("open");
+      fields[0].focus();
     }
     
     else{
@@ -19,7 +20,7 @@ export function Modal() {
     }
 
     let previous = undefined;
-    let next = undefined;
+    // let next = undefined;
     
     document.addEventListener('keyup', function(event){
       // Close modale au moment de l'escape
@@ -29,31 +30,28 @@ export function Modal() {
           modal.style.display = 'none';
         },200)
       };
+      if(event.shiftKey){
+        if(event.key === "Tab"){
+          event.preventDefault()
+          if (previous===fields[0]){
+            fields[fields.length-1].focus();
+
+          };    
+        }
+      } else{
+        if(event.key === "Tab"){
+          event.preventDefault()
+          if (previous===fields[fields.length-1]){
+            fields[0].focus();
+          };
+        };
+      }
 
       console.log(previous);
       // actions sur le tab
-      if(event.key === "Tab"){
-        event.preventDefault()
-        if (previous===fields[fields.length-1]){
-          fields[0].focus();
-        };
-      };
-
-      console.log(next);
-       // actions sur le shift + tab
-      if(event.shiftKey && event.key === "Tab"){
-        event.preventDefault()
-        if (next===fields[fields.length+1]){
-          fields[0].focus();
-        };
-      };
-
-      next = event.target;
-      previous = event.target;
-
-      // actions sur le shift + tab
       
-	  
+      previous = event.target;
+      // next = event.target;
   });
 }
 

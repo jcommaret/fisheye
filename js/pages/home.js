@@ -5,7 +5,7 @@ import '../../sass/main.scss';
 import { getData } from "../fetch_api"
 import { photographerFactory } from "../factories/photographers";
 
-// displau data from photographers
+// Display data from photographers
 export async function displayData(photographers) {
     const photographersSection = document.querySelector(".photographer_section");
     photographers.forEach((photographer) => {

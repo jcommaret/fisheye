@@ -3,7 +3,7 @@ import '../../sass/main.scss';
 
 // Imports JS
 import { getData } from "../fetch_api"
-import { photographerFactory } from "../factories/photographer";
+import { photographerFactory } from "../factories/photographers";
 
 // displau data from photographers
 export async function displayData(photographers) {

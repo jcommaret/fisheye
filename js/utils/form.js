@@ -104,14 +104,14 @@ form.addEventListener('submit', function (e) {
 
 form.addEventListener('input',function (e) {
     switch (e.target.id) {
-        case 'email': 
-            checkEmail();
-            break;
         case 'firstname' :   
             checkFirstName();
             break;
         case 'lastname' :    
             checkLastName();
+            break;
+        case 'email': 
+            checkEmail();
             break;
         default : 
             break;          

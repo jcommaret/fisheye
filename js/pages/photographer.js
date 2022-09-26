@@ -24,7 +24,6 @@ const init = async () => {
   const medias = await getMediaById(parseInt(id))
   const photographer = await getPhotographersById(parseInt(id))  
   
-  
   displayMedias(medias);
 }
 

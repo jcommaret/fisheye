@@ -123,12 +123,20 @@
 			height: 68px;
 			border: none;
 			border-radius: 5px;
+			
 			&.btn-contact{
 				width:170px;
+			}
+		}
+		.fromData{
+			input{
+				font-size:32px;
 			}
 		}
 	}
 	#message{
 		height: 150px;
+		width: inherit;
+		font-size: 24px;
 	}
 }

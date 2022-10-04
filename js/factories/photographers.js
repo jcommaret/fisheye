@@ -51,3 +51,4 @@ export function photographerFactory(data) {
 const goTo = (id) => {
     location.href="photographer.html?id="+id;
 }
+

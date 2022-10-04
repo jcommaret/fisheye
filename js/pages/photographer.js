@@ -19,6 +19,7 @@ export async function displayMedias(media) {
   });
 };
 
+
 const init = async () => {
   const id = new URL(document.location).searchParams.get("id");
   const medias = await getMediaById(parseInt(id))
@@ -26,5 +27,7 @@ const init = async () => {
   
   displayMedias(medias);
 }
+
+
 
 init();

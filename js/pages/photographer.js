@@ -8,6 +8,7 @@ import "../utils/form"
 // import JS functions
 import { getMediaById, getPhotographersById } from "../fetch_api";
 import { MediaFactory } from "../factories/media";
+import { PhotographerFactory } from "../factories/photographer";
 
 // Working
 export async function displayMedias(media) {
@@ -19,15 +20,21 @@ export async function displayMedias(media) {
   });
 };
 
+export async function displayPhotographer(photographers) {
+  const photographerSection = document.querySelector(".photographer_section");
+  photographers.forEach((p) => {
+    const type = p.image? "image" : "video" ;   
+    const photographerModel = new PhotographerFactory(p, type);
+    photographerSection.innerHTML+=photographerModel.render();  
+  });
+};
 
 const init = async () => {
   const id = new URL(document.location).searchParams.get("id");
   const medias = await getMediaById(parseInt(id))
-  const photographer = await getPhotographersById(parseInt(id))  
-  
+  const photographers = await getPhotographersById(parseInt(id))    
   displayMedias(medias);
+  displayPhotographer(photographers);
 }
-
-
 
 init();

@@ -1,23 +1,22 @@
+// a adapter
 class Media{
   constructor(data){
     this.id = data.id;
-    this.photographerId = data.photographerId;
-    this.title = data.title;
-    this.likes = data.likes;
-    this.date = data.date;
-    this.price = data.price;
+    this.name = data.name;
   }
   render(){
-    return `<div class="media">
-              <img src="https://via.placeholder.com/No+Media+To+Render">
-            </div>`;
+//    return `<div class="media">
+//              <img src="https://via.placeholder.com/No+Media+To+Render">
+//            </div>`;
   }
 }
 
 class Image extends Media{
   constructor(data){
     super(data)
-    this.image = data.image; 
+    this.image = data.image;
+    this.name = data.name;
+    console.log(this.name);
   }
   render(){
     return `<div class="media">
@@ -46,7 +45,7 @@ export class Video extends Media{
   }
 }
 
-export class MediaFactory{
+export class PhotographerFactory{
   constructor(data, type){
     switch (type){
       case "image" : { 

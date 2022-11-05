@@ -5,9 +5,9 @@ class Media{
     this.name = data.name;
   }
   render(){
-//    return `<div class="media">
-//              <img src="https://via.placeholder.com/No+Media+To+Render">
-//            </div>`;
+    return `<div class="media">
+              <img src="https://via.placeholder.com/No+Media+To+Render">
+            </div>`;
   }
 }
 

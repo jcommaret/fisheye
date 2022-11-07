@@ -21,18 +21,17 @@ export async function displayMedias(media) {
 };
 
 export async function displayPhotographer(photographers) {
-  const photographerSection = document.querySelector(".photographer_section");
-  photographers.forEach((p) => {
-    const type = p.image? "image" : "video" ;   
-    const photographerModel = new PhotographerFactory(p, type);
-    photographerSection.innerHTML+=photographerModel.render();  
-  });
+  const photographerSection = document.querySelector(".photograph");
+  const type = photographers.portrait? "image" : "video" ;   
+  const photographerModel = new PhotographerFactory(photographers, type);
+  photographerSection.innerHTML+=photographerModel.render();  
 };
 
 const init = async () => {
   const id = new URL(document.location).searchParams.get("id");
   const medias = await getMediaById(parseInt(id))
-  const photographers = await getPhotographersById(parseInt(id))    
+  const photographers = await getPhotographersById(parseInt(id))   
+  console.log(photographers);
   displayMedias(medias);
   displayPhotographer(photographers);
 }

@@ -25,5 +25,5 @@ export async function getPhotographers(){
 // Photographes par id
 export async function getPhotographersById(id){
     const { photographers } = await getData();
-    return photographers.filter(p => p.photographerId === id );
+    return photographers.find(p => p.id === id );
 }

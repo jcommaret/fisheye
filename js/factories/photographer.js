@@ -3,6 +3,10 @@ class Media{
   constructor(data){
     this.id = data.id;
     this.name = data.name;
+    this.city = data.city;
+    this.country = data.country;
+    this.tagline = data.tagline;
+    this.price = data.price;
   }
   render(){
     return `<div class="media">
@@ -15,17 +19,23 @@ class Image extends Media{
   constructor(data){
     super(data)
     this.portrait = data.portrait;
-    this.name = data.name;
-    console.log(this.name);
-    
   }
 
   render(){
-    return `<div class="media">
-              <img class="square lightbox-toogle" src="./images/images/${this.portrait}">
-              <div class="info">
-                <h2>${this.title}</h2>
-                <p>♥ <span class="likes">${this.likes}</p>
+    return `<div class=photograph-header>
+              <div> 
+                <h1>${this.name}</h1>
+                <div class="location">${this.city}, ${this.country}</div>
+                <div class="tagline">${this.tagline}</div>
+                <div class="price">${this.price}€</div>
+              </div>
+    
+              <div class="contact">
+                <btn class="btn-contact modal-toogle">Contactez-moi</btn>
+              </div>
+              
+              <div class="photograph-photo">
+                <img class="portrait" src="images/photographers/${this.portrait}" alt="photo de ${this.name}">
               </div>
             </div>`;
     }

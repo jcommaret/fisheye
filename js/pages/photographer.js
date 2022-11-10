@@ -10,6 +10,7 @@ import { getMediaById, getPhotographersById } from "../fetch_api";
 import { MediaFactory } from "../factories/media";
 import { PhotographerFactory } from "../factories/photographer";
 
+
 // Working
 export async function displayMedias(media) {
   const mediasSection = document.querySelector(".medias_section");
@@ -29,13 +30,11 @@ export async function displayPhotographer(photographers) {
 
 const init = async () => {
   const id = new URL(document.location).searchParams.get("id");
-  const medias = await getMediaById(parseInt(id))
-  const photographers = await getPhotographersById(parseInt(id))   
-  console.log(photographers);
+  const medias = await getMediaById(parseInt(id));
+  const photographers = await getPhotographersById(parseInt(id));
   displayMedias(medias);
   displayPhotographer(photographers);
 }
-
 
 let dropdown = document.querySelector('.dropdown')
 

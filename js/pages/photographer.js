@@ -10,8 +10,7 @@ import { getMediaById, getPhotographersById } from "../fetch_api";
 import { MediaFactory } from "../factories/media";
 import { PhotographerFactory } from "../factories/photographer";
 
-
-// Working
+// Display medias
 export async function displayMedias(media) {
   const mediasSection = document.querySelector(".medias_section");
   media.forEach((m) => {
@@ -21,12 +20,14 @@ export async function displayMedias(media) {
   });
 };
 
+// Display photographers
 export async function displayPhotographer(photographers) {
   const photographerSection = document.querySelector(".photograph");
   const type = photographers.portrait? "image" : "video" ;   
   const photographerModel = new PhotographerFactory(photographers, type);
   photographerSection.innerHTML+=photographerModel.render();  
 };
+
 
 const init = async () => {
   const id = new URL(document.location).searchParams.get("id");
@@ -47,3 +48,4 @@ dropdown.addEventListener('click', (e) => {
 })
 
 init();
+Modal();

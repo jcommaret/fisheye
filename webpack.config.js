@@ -55,6 +55,19 @@ let config = smp.wrap({
         test: /\.json$/,
         type: 'asset',
       },
+      {
+        // convert all imported images to have max width 1000px
+        test: /\.(png|jpe?g|webp|tiff?)$/i,
+        use: [
+          "file-loader",
+          {
+            loader: "webpack-image-resize-loader",
+            options: {
+              width: 500,
+            },
+          },
+        ],
+      },
     ]
   },
   plugins:[

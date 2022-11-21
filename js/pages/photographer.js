@@ -2,9 +2,9 @@
 import '../../sass/main.scss'; 
 
 // Import modale et lightbox
-import { Modal } from '../utils/modal';
+import * as modalForm from '../utils/modal';
 
-import "../utils/form"
+import "../utils/form";
 // import JS functions
 import { getMediaById, getPhotographersById } from "../fetch_api";
 import { MediaFactory } from "../factories/media";
@@ -25,9 +25,9 @@ export async function displayPhotographer(photographers) {
   const photographerSection = document.querySelector(".photograph");
   const type = photographers.portrait? "image" : "video" ;   
   const photographerModel = new PhotographerFactory(photographers, type);
-  photographerSection.innerHTML+=photographerModel.render();  
+  photographerSection.innerHTML+=photographerModel.render(); 
+  modalForm.init(); 
 };
-
 
 const init = async () => {
   const id = new URL(document.location).searchParams.get("id");
@@ -35,7 +35,7 @@ const init = async () => {
   const photographers = await getPhotographersById(parseInt(id));
   displayMedias(medias);
   displayPhotographer(photographers);
-}
+};
 
 let dropdown = document.querySelector('.dropdown')
 
@@ -48,4 +48,3 @@ dropdown.addEventListener('click', (e) => {
 })
 
 init();
-Modal();

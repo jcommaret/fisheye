@@ -10,7 +10,6 @@
 	&-toogle{
 		height: 40px;
 		width:40px;	
-		text-indent: -100000px;
 		cursor: pointer;
 	}
   display: none;
@@ -117,16 +116,6 @@
 			width: 100%;
 			align-items: self-start;
 			margin-bottom: 26px;
-		}
-		input {
-			width: 100%;
-			height: 68px;
-			border: none;
-			border-radius: 5px;
-			
-			&.btn-contact{
-				width:170px;
-			}
 		}
 		.fromData{
 			input{

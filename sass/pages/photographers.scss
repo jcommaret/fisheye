@@ -81,52 +81,47 @@
   justify-content: flex-start;
   border-radius: 5px;
   .filter_section{
-    margin-bottom:30px;
-    ul{
-      margin: 0;
-      padding: 0;
-      list-style-type: none;
-      font-size:18px;
-    }
-    a{
-      border-radius: 5px;
-      text-decoration: none;
-      color: c.$white;
-      padding:20px;
-      background-color: c.$red;
-    }
+    line-height: 50px;
+    margin-top: 2px;
+    margin-bottom: 2px;
     .dropdown{
       transition: all 0.2s ease-in-out;
       overflow: hidden;
-      margin: 30px;
+      height:50px;
       position: absolute;
       display: flex;
       flex-direction: row;
+      overflow:visible;
       cursor: pointer;
+      &.closed{
+        overflow: hidden;
+      }
+      ul{
+        margin-left: 10px;
+        padding: 0;
+        list-style-type: none;
+        font-size:18px;
+        &.menu {
+          li{
+            font-weight: bold;
+            color: c.$white;
+            background-color: c.$red; 
+            border-radius: 5px;
+            text-decoration: none;    
+            a{
+              color: c.$white;
+              text-decoration: none;
+              padding:5px;
+            }
+            cursor: pointer;
+          }
+        }
+      }
     }
     .icon {
       display: flex;
       justify-content: space-between;
       padding: 0 25px 0 10px;
-    }
-    .menu {
-      height: 228px;
-      border-radius: 5px;
-    }
-    .menu li {
-      font-size: 20px;
-      font-weight: bold;
-      color: white;
-      padding: 11px;
-      width: 100px;
-      min-height: 35px;
-      border: none;
-      background-color: #901C1C;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .dropdown.closed .menu {
-      height: 0px;
     }
     .dropdown.closed .icon span {
       transform: rotate(180deg);

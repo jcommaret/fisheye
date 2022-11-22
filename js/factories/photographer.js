@@ -35,7 +35,7 @@ class Image extends Media{
               </div>
               
               <div class="photograph-photo">
-                <img class="portrait" src="images/photographers/${this.portrait}" alt="photo de ${this.name}">
+                <img class="portrait" loading="lazy" src="images/photographers/${this.portrait}" alt="photo de ${this.name}">
               </div>
             </div>`;
     }

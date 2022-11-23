@@ -1,7 +1,7 @@
 // Imports SCSS
 import '../../sass/main.scss'; 
 
-// Import modale et lightbox
+// Import modale
 import * as modalForm from '../utils/modal';
 
 import "../utils/form";
@@ -16,7 +16,7 @@ export async function displayMedias(media) {
   media.forEach((m) => {
     const type = m.image? "image" : "video" ;   
     const mediaModel = new MediaFactory(m, type);
-    mediasSection.innerHTML+=mediaModel.render();  
+    mediasSection.innerHTML+=mediaModel.render(); 
   });
 };
 
@@ -37,8 +37,7 @@ const init = async () => {
   displayPhotographer(photographers);
 };
 
-let dropdown = document.querySelector('.dropdown')
-
+const dropdown = document.querySelector('.dropdown')
 dropdown.addEventListener('click', (e) => {
   if (dropdown.classList.contains('closed')) {
     dropdown.classList.remove('closed')

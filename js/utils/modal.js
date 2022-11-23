@@ -1,10 +1,10 @@
 // Modal function : check if modal has class open and add it if not, remove it if this is the case 
 export function modalwindow() {
- 
   // modal window
   const modal = document.querySelector(".modal");
   const fields = Array.from(modal.querySelectorAll(".fields"));
-    if (!modal.classList.contains("open")){
+  
+  if (!modal.classList.contains("open")){
       modal.classList.remove("hide");
       modal.classList.add("open");
       fields[0].focus();
@@ -44,7 +44,6 @@ export function modalwindow() {
 
       console.log(previous);
       // actions sur le tab
-      
       previous = event.target;
       // next = event.target;
   });
@@ -52,9 +51,6 @@ export function modalwindow() {
 
 export function init() {
   const modalBtn = document.querySelectorAll(".modal-toogle");
-  // launch modal function on every click on Modal btn
   modalBtn.forEach((button) => button.addEventListener("click", () => modalwindow()));
 };
-// tab // shift // shift tab
-// event listener keyup
 

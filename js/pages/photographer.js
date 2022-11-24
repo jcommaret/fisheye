@@ -9,6 +9,8 @@ import "../utils/form";
 import { getMediaById, getPhotographersById } from "../fetch_api";
 import { MediaFactory } from "../factories/media";
 import { PhotographerFactory } from "../factories/photographer";
+import { Dropdown } from '../utils/dropdown';
+import { CopyPhotographerName } from '../utils/copyPhotographerName';
 
 // Display medias
 export async function displayMedias(media) {
@@ -20,7 +22,6 @@ export async function displayMedias(media) {
   });
 };
 
-
 // Display photographers
 export async function displayPhotographer(photographers) {
   const photographerSection = document.querySelector(".photograph");
@@ -30,29 +31,15 @@ export async function displayPhotographer(photographers) {
   modalForm.init(); 
 };
 
-export function copyPhotographerName(){
-  const textOrigin = document.querySelector('h1.photographerName').textContent;
-  const textDestination = document.querySelector('#modalTitle');  
-  textDestination.innerHTML="Contactez-moi" + " " + textOrigin;
-};
-
 const init = async () => {
   const id = new URL(document.location).searchParams.get("id");
   const medias = await getMediaById(parseInt(id));
   const photographers = await getPhotographersById(parseInt(id));
   displayMedias(medias);
   displayPhotographer(photographers);
-  copyPhotographerName();
+  
+  Dropdown();
+  CopyPhotographerName(); 
 };
-
-
-const dropdown = document.querySelector('.dropdown')
-dropdown.addEventListener('click', (e) => {
-  if (dropdown.classList.contains('closed')) {
-    dropdown.classList.remove('closed')
-  } else {
-  dropdown.classList.add('closed')    
-  }
-})
 
 init();

@@ -16,7 +16,6 @@ export async function getMediaById(id){
     return media.filter(m => m.photographerId === id );
 }
 
-
 // Tout les photographes
 export async function getPhotographers(){
     const photographers = await getData();

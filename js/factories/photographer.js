@@ -24,7 +24,7 @@ class Image extends Media{
   render(){
     return `<div class=photograph-header>
               <div> 
-                <h1>${this.name}</h1>
+                <h1 class="photographerName">${this.name}</h1>
                 <div class="location">${this.city}, ${this.country}</div>
                 <div class="tagline">${this.tagline}</div>
                 <div class="price">${this.price}€</div>

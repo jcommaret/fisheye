@@ -20,6 +20,7 @@ export async function displayMedias(media) {
   });
 };
 
+
 // Display photographers
 export async function displayPhotographer(photographers) {
   const photographerSection = document.querySelector(".photograph");
@@ -29,13 +30,21 @@ export async function displayPhotographer(photographers) {
   modalForm.init(); 
 };
 
+export function copyPhotographerName(){
+  const textOrigin = document.querySelector('h1.photographerName').textContent;
+  const textDestination = document.querySelector('#modalTitle');  
+  textDestination.innerHTML="Contactez-moi" + " " + textOrigin;
+};
+
 const init = async () => {
   const id = new URL(document.location).searchParams.get("id");
   const medias = await getMediaById(parseInt(id));
   const photographers = await getPhotographersById(parseInt(id));
   displayMedias(medias);
   displayPhotographer(photographers);
+  copyPhotographerName();
 };
+
 
 const dropdown = document.querySelector('.dropdown')
 dropdown.addEventListener('click', (e) => {

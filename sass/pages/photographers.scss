@@ -111,6 +111,7 @@ textarea{
       display: flex;
       flex-direction: row;
       overflow:visible;
+      z-index: 1000;
       span{
         font-weight: 700;
       }

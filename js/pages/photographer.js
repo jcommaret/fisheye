@@ -11,6 +11,7 @@ import { MediaFactory } from "../factories/media";
 import { PhotographerFactory } from "../factories/photographer";
 import { Dropdown } from '../utils/dropdown';
 import { CopyPhotographerName } from '../utils/copyPhotographerName';
+import { sortbyDate, sortbyLikes, sortbyTitle } from '../utils/filters';
 
 // Display medias
 export async function displayMedias(media) {
@@ -31,15 +32,18 @@ export async function displayPhotographer(photographers) {
   modalForm.init(); 
 };
 
+
 const init = async () => {
   const id = new URL(document.location).searchParams.get("id");
   const medias = await getMediaById(parseInt(id));
   const photographers = await getPhotographersById(parseInt(id));
   displayMedias(medias);
   displayPhotographer(photographers);
-  
   Dropdown();
-  CopyPhotographerName(); 
+  CopyPhotographerName();
+  sortbyDate(medias);
+  sortbyLikes(medias);
+  sortbyTitle(medias);
 };
 
 init();

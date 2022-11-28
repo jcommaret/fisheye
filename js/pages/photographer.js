@@ -10,8 +10,9 @@ import { getMediaById, getPhotographersById } from "../fetch_api";
 import { MediaFactory } from "../factories/media";
 import { PhotographerFactory } from "../factories/photographer";
 import { Dropdown } from '../utils/dropdown';
-import { CopyPhotographerName } from '../utils/copyPhotographerName';
+import { CopyPhotographerName, CopyPrice } from '../utils/copyPhotographerName';
 import { sortbyDate, sortbyLikes, sortbyTitle } from '../utils/filters';
+import { getTotalLikes } from '../utils/likes';
 
 // Display medias
 export async function displayMedias(media) {
@@ -41,9 +42,13 @@ const init = async () => {
   displayPhotographer(photographers);
   Dropdown();
   CopyPhotographerName();
+  CopyPrice();
+  getTotalLikes(medias);
+  
   sortbyDate(medias);
   sortbyLikes(medias);
   sortbyTitle(medias);
+  
 };
 
 init();

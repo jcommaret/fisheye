@@ -191,3 +191,26 @@ textarea{
     }
   }
 }
+.bar{
+  font-size: 24px;
+  display:flex;
+  flex-direction: row;
+  position: fixed;
+  right:36px;
+  bottom:0;
+  background-color: #DB8876;
+  color:black;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+  padding-left:12px;
+  padding-right: 12px;
+  padding-top: 12px;
+  padding-bottom:12px;
+
+  .compteurLikes, .price{
+    padding:20px;
+  }
+  .price{
+    margin-top: 2px;
+  }
+}

@@ -1,10 +1,6 @@
-export function Dropdown() {
-  const dropdown = document.querySelector('.dropdown')
-  dropdown.addEventListener('click', (e) => {
-    if (dropdown.classList.contains('closed')) {
-      dropdown.classList.remove('closed')
-    } else {
-    dropdown.classList.add('closed')    
-    }
-  })
+export function Dropdown() { 
+  let dropdown = document.querySelector(".dropdown")
+  dropdown.onclick = function() {
+      dropdown.classList.toggle("active")
+  }
 }

@@ -34,7 +34,6 @@ export async function displayPhotographer(photographers) {
   modalForm.init(); 
 };
 
-
 const init = async () => {
   const id = new URL(document.location).searchParams.get("id");
   const medias = await getMediaById(parseInt(id));
@@ -44,12 +43,10 @@ const init = async () => {
   Dropdown();
   CopyPhotographerName();
   CopyPrice();
-  getTotalLikes(medias);
-  
+  getTotalLikes(medias);  
   sortbyDate(medias);
   sortbyLikes(medias);
   sortbyTitle(medias);
-  
 };
 
 init();

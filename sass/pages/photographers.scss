@@ -2,7 +2,7 @@
 @use "../utils/mixins.scss" as m;
 @use "../utils/fonts.scss" as f;
 
-.btn{
+.btn-contact{
   align-items: center;
   justify-content: center;
   width:170px;
@@ -103,51 +103,72 @@ textarea{
     line-height: 50px;
     margin-top: 9px;
     margin-bottom: 2px;
-    .dropdown{
-      transition: all 0.2s ease-in-out;
-      overflow: hidden;
-      height:calc(170px/3);
-      position: absolute;
-      display: flex;
-      flex-direction: row;
-      overflow:visible;
-      z-index: 1000;
-      span{
-        font-weight: 700;
+    display: flex;
+    .dropdown {
+      ::placeholder{
+        color:black;
       }
-      cursor: pointer;
-      &.closed{
-        overflow: hidden;
+      position: relative;
+      left: 20px;
+      width: 200px;
+      height: 50px;
+      color:black;
+      &::before{
+        content: "";
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        z-index: 1000;
+        width: 8px;
+        height: 8px;
+        border: 2px solid #333;
+        border-top: 2px solid c.$red;
+        border-right: 2px solid c.$red;
+        transform: rotate(-45deg);
+        transition: 0.5s;
+        pointer-events: none;
       }
-      ul{
-        font-style: normal;
-        font-weight: 700;
-        font-size: 18px;
-        line-height: 23px;
-        margin-left: 10px;
-        padding: 0;
-        list-style-type: none;
-        .btn{
-          height:calc(170px /3);
-          display: flex;
-          line-height:calc(170px /3); 
-        }
-        a{
-          color:c.$white;
-          text-decoration: none;
-          align-items: center;
-          justify-content: center;
-        }
+      &.active::before{
+        top: 22px;
+        transform: rotate(-225deg);
+      }
+      input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         cursor: pointer;
+        background: c.$red;
+        font-size: 1.2em;
+        border: none;
+        outline: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        padding: 12px 20px;
+        border-radius: 10px;
       }
-    }
-    .icon {
-      display: flex;
-      justify-content: space-between;
-      padding: 0 25px 0 10px;
-    }
-    .dropdown.closed .icon span {
-      transform: rotate(180deg);
+      .options {
+        position: absolute;
+        z-index: 1000;
+        top: 70px;
+        width: 100%;
+        background: c.$red;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        border-radius: 10px;
+        overflow: hidden;
+        display: none;
+        div {
+          padding: 12px 20px;
+          cursor: pointer;
+          &:hover{
+            background: #62baea;
+            color: #fff;
+          }
+        }
+      }
+      &.active .options{
+        display: block;
+      }
     }
   }
   .medias_section{

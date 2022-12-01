@@ -21,6 +21,14 @@
     color:#000;
   }
 }
+.modal{
+  .btn-contact{
+    &:hover{
+      color: c.$white;
+      background-color: c.$red;
+    }
+  }
+}
 
 textarea{
   border:none;
@@ -193,7 +201,7 @@ textarea{
     flex-wrap: wrap;
     justify-content: center;
     gap:20px;
-    margin-top:80px;
+    margin-top:45px;
     @include m.desktop{
       
     }

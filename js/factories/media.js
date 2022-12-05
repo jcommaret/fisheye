@@ -23,8 +23,9 @@ class Image extends Media{
     return `<div class="media">
               <img class="square lightbox-toogle" loading="lazy" src="./images/images/${this.image}">
               <div class="info">
-                <h2>${this.title}</h2>
-                <p class="likes">${this.likes} ♥</p>
+               
+              <div id="likes-btn">
+                <div id="count">${this.likes}</div>
               </div>
             </div>`;
     }
@@ -40,7 +41,9 @@ export class Video extends Media{
               <video class="square" src="./images/images/${this.video}"></video>
               <div class="info">
                 <h2>${this.title}</h2>
-                <p class="likes-btn"><span>${this.likes}</span> ♥</p>
+                <div id="likes-btn">
+                  <div id="count">${this.likes}</div>
+                </div>
               </div>
             </div>`;
   }

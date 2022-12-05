@@ -12,7 +12,7 @@ import { PhotographerFactory } from "../factories/photographer";
 import { Dropdown } from '../utils/dropdown';
 import { CopyPhotographerName, CopyPrice } from '../utils/copyPhotographerName';
 import { sortbyDate, sortbyLikes, sortbyTitle } from '../utils/filters';
-import { getTotalLikes } from '../utils/likes';
+import { getTotalLikes, IncrementLikes } from '../utils/likes';
 
 // Display medias
 export async function displayMedias(media) {
@@ -47,6 +47,7 @@ const init = async () => {
   sortbyDate(medias);
   sortbyLikes(medias);
   sortbyTitle(medias);
+  IncrementLikes()
 };
 
 init();

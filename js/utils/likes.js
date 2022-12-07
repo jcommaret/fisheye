@@ -17,12 +17,12 @@ export function IncrementLikes(){
       if(!attribut){
         nbLike = parseInt(nbLike) + 1
         heart.setAttribute("data-like",true)
-        nodeLike.textContent = "" + nbLike
+        nodeLike.innerHTML = `${nbLike} ` + `<i class="fa-solid fa-heart"></i>`
       }
       else{
         nbLike = parseInt(nbLike) - 1
         heart.removeAttribute("data-like")
-        nodeLike.textContent = " " + nbLike
+        nodeLike.innerHTML = `${nbLike} ` + `<i class="fa-regular fa-heart"></i>`
       }
     })
   })

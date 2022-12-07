@@ -1,12 +1,15 @@
 import { displayMedias } from "../pages/photographer";
 
 export async function sortbyDate(medias){
-  const btnDate = document.querySelector('.btn.date');
+  const btnDate = document.querySelector('.date');
   btnDate.addEventListener('click', (e) => {
     medias.sort(function(a, b)
     { return new Date(b.date) - new Date(a.date)});;
     displayMedias(medias);
-})};
+
+   
+
+  })};
 
 export async function sortbyLikes(medias){
   const btnLikes = document.querySelector('.btn.likes');
@@ -25,3 +28,4 @@ export async function sortbyTitle(medias){
   );
   displayMedias(medias);
 })};
+

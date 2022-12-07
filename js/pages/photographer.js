@@ -1,5 +1,6 @@
 // Imports SCSS
 import '../../sass/main.scss'; 
+import '../utils/fa';
 
 // Import modale
 import * as modalForm from '../utils/modal';
@@ -9,6 +10,7 @@ import "../utils/form";
 import { getMediaById, getPhotographersById } from "../fetch_api";
 import { MediaFactory } from "../factories/media";
 import { PhotographerFactory } from "../factories/photographer";
+
 import { Dropdown } from '../utils/dropdown';
 import { CopyPhotographerName, CopyPrice } from '../utils/copyPhotographerName';
 import { sortbyDate, sortbyLikes, sortbyTitle } from '../utils/filters';

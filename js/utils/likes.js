@@ -3,34 +3,27 @@ export function getTotalLikes(data){
   data.forEach((media) => {
     totalLikes +=media.likes;
   });
-  document.querySelector('.compteurLikes').innerHTML = `${totalLikes}` + `♥`
+  document.querySelector('.compteurLikes').innerHTML = `${totalLikes} `+ `<i class="fa-solid fa-heart"></i>`
 };
 
 export function IncrementLikes(){
   // Increment
-  const incrementBtn = document.getElementById("likes-btn");
-  const totalCountByMedia = document.getElementById("count");
-  const decrementBtn = document.getElementsByClassName("decrement-btn");
-  // Variable to track count
-  var count = 0;
-  // Display initial count value
-  totalCountByMedia.innerHTML = count;
-  // Function to increment count and add a decrement-btn
-  const handleIncrement = () => {
-    count++;
-    totalCountByMedia.innerHTML = count;
-    incrementBtn.classList.add("decrement-btn");
-  };
-
-  // se decrement btn to decrement count
-  //const handleDecrement = () => {
-  //  count--;
-  //  totalCountByMedia.innerHTML = count;
-  //  btnLike.classList.remove("decrement-btn");
-  //};
-
-  // Add click event to buttons
-  incrementBtn.addEventListener("click", handleIncrement);
-  // decrementBtn.addEventListener("click", handleDecrement);
-};
-
+  const hearts = document.querySelectorAll(".likes-btn");
+  Array.from(hearts).forEach(heart => {
+    heart.addEventListener("click", (e)=>{
+      let nbLike = heart.querySelector("#count").textContent
+      const nodeLike = heart.querySelector("#count")
+      const attribut = heart.getAttribute("data-like")
+      if(!attribut){
+        nbLike = parseInt(nbLike) + 1
+        heart.setAttribute("data-like",true)
+        nodeLike.textContent = "" + nbLike
+      }
+      else{
+        nbLike = parseInt(nbLike) - 1
+        heart.removeAttribute("data-like")
+        nodeLike.textContent = " " + nbLike
+      }
+    })
+  })
+}

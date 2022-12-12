@@ -1,19 +1,22 @@
-export function ChangeSlide(sens) {
-  const medias = document.querySelectorAll("#medcont").src;
-  
+let medias = [];
+let numero = 0;
 
-  let numero = 0;  
-  let slide = "plop";
+export function ChangeSlide(sens) {
+  let slide = [...medias];
   numero = numero + sens;
   if (numero < 0)
       numero = slide.length - 1;
   
   if (numero > slide.length - 1)
       numero = 0;
-  document.getElementById("slide").src = slide[numero];
+      
+  document.getElementById("slide").src = slide[numero].src;
 }
+
+
 export function init() {
-    const next = document.querySelector(".next");
+  medias =  Array.from(document.querySelectorAll(".media-media"));
+  const next = document.querySelector(".next");
     const previous = document.querySelector(".previous");
     next.addEventListener("click", () => ChangeSlide(1));
     previous.addEventListener("click", () => ChangeSlide(-1));

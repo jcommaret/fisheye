@@ -5,7 +5,7 @@ import '../utils/fa';
 // Import modale
 import * as modalForm from '../utils/modal';
 import * as lightbox from '../utils/lightbox';
-import * as ChangeSlide from '../utils/slider';
+import * as slider from '../utils/slider';
 
 import "../utils/form";
 // import JS functions
@@ -37,7 +37,7 @@ export async function displayPhotographer(photographers) {
   photographerSection.innerHTML+=photographerModel.render(); 
   modalForm.init(); 
   lightbox.init();
-  ChangeSlide.init();
+  slider.init();
 };
 
 const init = async () => {

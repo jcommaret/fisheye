@@ -18,7 +18,6 @@ import { CopyPhotographerName, CopyPrice } from '../utils/copyPhotographerName';
 import { sortbyDate, sortbyLikes, sortbyTitle } from '../utils/filters';
 import { getTotalLikes, IncrementLikes } from '../utils/likes';
 
-
 // Display medias
 export async function displayMedias(media) {
   const mediasSection = document.querySelector(".medias_section");

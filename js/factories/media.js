@@ -21,7 +21,7 @@ class Image extends Media{
   }
   render(){
     return `<div class="media">
-              <img class="square lightbox-toogle" loading="lazy" src="./images/images/${this.image}">
+              <img id="medcont" class="square lightbox-toogle" loading="lazy" src="./images/images/${this.image}">
               <div class="info">
               <h2>${this.title}</h2>
                 
@@ -39,7 +39,7 @@ export class Video extends Media{
   }
   render(){
     return `<div class="media">
-              <video class="square" src="./images/images/${this.video}"></video>
+              <video id="medcont" class="square" src="./images/images/${this.video}"></video>
               <div class="info">
                 <h2>${this.title}</h2>
                 <div class="likes-btn">

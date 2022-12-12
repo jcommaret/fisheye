@@ -1,11 +1,3 @@
-export function getTotalLikes(data){
-  let totalLikes = 0;
-  data.forEach((media) => {
-    totalLikes +=media.likes;
-  });
-  document.querySelector('.compteurLikes').innerHTML = `${totalLikes} `+ `<i class="fa-solid fa-heart"></i>`
-};
-
 export function IncrementLikes(){
   // Increment
   const hearts = document.querySelectorAll(".likes-btn");
@@ -27,3 +19,11 @@ export function IncrementLikes(){
     })
   })
 }
+
+export function getTotalLikes(data){
+  let totalLikes = 0;
+  data.forEach((media) => {
+    totalLikes +=media.likes;
+  });
+  document.querySelector('.compteurLikes').innerHTML = `${totalLikes} `+ `<i class="fa-solid fa-heart"></i>`
+};

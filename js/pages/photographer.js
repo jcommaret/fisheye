@@ -4,6 +4,8 @@ import '../utils/fa';
 
 // Import modale
 import * as modalForm from '../utils/modal';
+import * as lightbox from '../utils/lightbox';
+import * as ChangeSlide from '../utils/slider';
 
 import "../utils/form";
 // import JS functions
@@ -15,6 +17,7 @@ import { Dropdown } from '../utils/dropdown';
 import { CopyPhotographerName, CopyPrice } from '../utils/copyPhotographerName';
 import { sortbyDate, sortbyLikes, sortbyTitle } from '../utils/filters';
 import { getTotalLikes, IncrementLikes } from '../utils/likes';
+
 
 // Display medias
 export async function displayMedias(media) {
@@ -34,6 +37,8 @@ export async function displayPhotographer(photographers) {
   const photographerModel = new PhotographerFactory(photographers, type);
   photographerSection.innerHTML+=photographerModel.render(); 
   modalForm.init(); 
+  lightbox.init();
+  ChangeSlide.init();
 };
 
 const init = async () => {

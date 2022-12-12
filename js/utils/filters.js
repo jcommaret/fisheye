@@ -6,9 +6,6 @@ export async function sortbyDate(medias){
     medias.sort(function(a, b)
     { return new Date(b.date) - new Date(a.date)});;
     displayMedias(medias);
-
-   
-
   })};
 
 export async function sortbyLikes(medias){

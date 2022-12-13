@@ -261,6 +261,24 @@ textarea{
     margin-top: 2px;
   }
 }
+
 #count{
   color:c.$red;
+}
+
+
+#slide{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+video, img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+video{
+  width: 99%;
 }

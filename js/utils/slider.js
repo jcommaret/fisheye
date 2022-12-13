@@ -9,8 +9,18 @@ export function ChangeSlide(sens) {
   
   if (numero > slide.length - 1)
       numero = 0;
-      
-  document.getElementById("slide").src = slide[numero].src;
+  const media = slide[numero];
+  console.log ("--- ", media.tagName);
+  const node_= buildMedia(media.tagName, media.src);
+  document.getElementById("slide").innerHTML = node_;
+}
+
+function buildMedia(tagName, source) {
+  if (tagName.toLowerCase() === "img"){
+    return `<img src="${source}" alt=""/>`;
+  }else if (tagName.toLowerCase() === "video"){
+    return `<video src="${source}" controls></video>`;
+  }
 }
 
 

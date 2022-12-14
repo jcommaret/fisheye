@@ -14,7 +14,7 @@ export function lightboxwindow() {
     if(event.key === "Escape"){
       lightbox.className = "lightbox hide";
       setTimeout(()=>{
-        lightbox.style.display = 'none';
+        lightbox.className = "lightbox hide";
       },200)
     };
   });

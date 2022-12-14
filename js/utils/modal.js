@@ -22,7 +22,7 @@ export function modalwindow() {
       if(event.key === "Escape"){
         modal.className = "modal hide";
         setTimeout(()=>{
-          modal.style.display = 'none';
+          modal.className = "modal hide";
         },200)
       };
       if(event.shiftKey){

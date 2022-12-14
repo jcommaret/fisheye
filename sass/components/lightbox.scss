@@ -2,33 +2,47 @@
 @use "../utils/mixins.scss" as m;
 @use "../animations/hide-show.scss";
 
-.center{
+.lightbox{
 	display:flex;
 	justify-content: center;
-}
-
-.lightbox{
-	.media{
-		img{
-			width: 200px;
-		}
-	}
-  display: none;
+	display: none;
   position: fixed;
   z-index: 3000;
-  top: 20px;
-	left:20px;
-	right:20px;
-	bottom:20px;
-	border-radius: 5px;
-  background-color: c.$white;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 15px;
-	padding-right: 35px;
-	padding-left: 35px;
-  margin: auto;
+  top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	background-color: c.$white;
+	&-btn{
+		text-indent:-10000px;
+		&--close {
+			cursor: pointer;
+			width: 30px;
+			height: 30px;
+			text-indent:-10000px;
+			position: absolute;
+			right: 125px;
+			top: 77px;
+			&:before {
+				position: absolute;
+				left: 15px;
+				content: " ";
+				height: 33px;
+				width: 3px;
+				background-color: c.$red;
+				transform: rotate(45deg);
+			}
+			&:after {
+				position: absolute;
+				left: 15px;
+				content: " ";
+				height: 33px;
+				width: 3px;
+				background-color: c.$red;
+				transform: rotate(-45deg);
+			}
+		}
+	}
 	&.hide{
 		display: block;
 		animation-name: hide;
@@ -42,63 +56,4 @@
   	animation-duration: 0.5s;
   	animation-timing-function: ease-in-out;
 	}
-  &-header {
-  	justify-content: space-between;
-    width: 100%;    
-
-    img {
-      cursor: pointer;
-    }
-		h2 {
-			font-size: 64px;
-			font-weight: normal;
-			text-align: left;
-			;
-		}
-	}
 }
-
-.btn{
-	cursor: pointer;
-	&-close {
-		position: absolute;
-		right: 15px;
-		top: 15px;
-		width: 32px;
-		height: 32px;
-		opacity: 1;
-		cursor: pointer;
-		transform: scale(0.7);
-		&:before {
-			position: absolute;
-			left: 15px;
-			content: " ";
-			height: 33px;
-			width: 3px;
-			background-color: white;
-			transform: rotate(45deg);
-		}
-		&:after {
-			position: absolute;
-			left: 15px;
-			content: " ";
-			height: 33px;
-			width: 3px;
-			background-color: white;
-			transform: rotate(-45deg);
-		}
-	}
-	&-contact{
-		font-size: 20px;
-		font-weight: bold;
-		color: c.$white;
-		padding: 11px;
-	
-		min-height:35px;
-		border: none;
-		background-color: c.$red;
-		border-radius: 5px;
-		cursor: pointer;
-	}
-}
-

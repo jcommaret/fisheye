@@ -13,8 +13,6 @@ export function ChangeSlide(sens) {
   let slide = [...medias];
   let slideTitle = [...mediasTitle];
   
-  // Changement de slide
-  numero = numero + sens;
 
   if (numero < 0)
       numero = slide.length - 1
@@ -23,7 +21,7 @@ export function ChangeSlide(sens) {
       numero = 0;
   
   // Récupération des données du slide
-  const media = slide[numero];
+  const media = slide[numero-1];
   const mediaTitle = slideTitle[numero];
 
   // Construction du slide
@@ -31,6 +29,9 @@ export function ChangeSlide(sens) {
   
   // Affichage du slide
   document.getElementById("slide").innerHTML = mediaContent;
+  
+  // Changement de slide
+  numero = numero + sens;
 }
 
 // Construction du slide
@@ -54,4 +55,16 @@ export function init() {
   // Ajout des évènements
   next.addEventListener("click", () => ChangeSlide(1));
   previous.addEventListener("click", () => ChangeSlide(-1));
+}
+
+export function setCurrentMedia(event){
+  const node=event.target;
+  console.log(node)
+  if(node.tagName.toLowerCase()==='img' || node.tagName.toLowerCase()==='video'){
+    numero=medias.findIndex(media=>media===node)
+    console.log(numero)
+    if(numero){
+      ChangeSlide(0)
+    }
+  }
 }

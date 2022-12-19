@@ -1,5 +1,7 @@
+import { setCurrentMedia } from "./slider";
+
 // Modal function : check if modal has class open and add it if not, remove it if this is the case 
-export function lightboxwindow() {
+export function lightboxwindow(event) {
   // modal window
   const lightbox = document.querySelector(".lightbox");
   if (!lightbox.classList.contains("open")){
@@ -18,10 +20,11 @@ export function lightboxwindow() {
       },200)
     };
   });
+  setCurrentMedia(event)
 }
 
 export function init() {
   const lightboxBtn = document.querySelectorAll(".lightbox-toogle");
-  lightboxBtn.forEach((button) => button.addEventListener("click", () => lightboxwindow()));
+  lightboxBtn.forEach((button) => button.addEventListener("click", (e) => lightboxwindow(e)));
 };
 

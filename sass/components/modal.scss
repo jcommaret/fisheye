@@ -2,12 +2,14 @@
 @use "../utils/mixins.scss" as m;
 @use "../animations/hide-show.scss";
 
-.center{
+.window{
 	display:flex;
 	justify-content: center;
 }
 
 .modal{
+	display:flex;
+	justify-content: center;
 	&-toogle{
 		cursor: pointer;
 	}

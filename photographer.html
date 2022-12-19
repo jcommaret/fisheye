@@ -6,7 +6,9 @@
       <link rel="icon" type="image/png" href="/images/icons/favicon.png"/>
    </head>
    <body>
-      <div class="center">
+
+      <div class="window">
+         <!-- Modal -->         
          <div class="modal" aria-hidden="true" role="dialog" aria-describedby="modalTitle">
             <span tabindex="0"></span>
             <header>
@@ -46,18 +48,18 @@
                </form>
             </div>
          </div>  
-      
+         <!--End of modal-->
+        
+         <!--lightbow-->
          <div class="lightbox" aria-hidden="true" role="dialog" aria-describedby="lightboxTitle">
             <span tabindex="0"></span>
-            
-            <header>
-               <div class="lightbox-btn--close lightbox-toogle" tabindex="0">Close Lightbox</div>        
-            </header>
-
+            <div class="lightbox-btn--close lightbox-toogle" tabindex="0">Close Lightbox</div>        
             <div class="lightbox-body">
                <div id="slider">
                   <div class="previous"></div>
-                  <div id="slide"></div>
+                  <div class="slide-container">
+                     <div id="slide"></div>
+                  </div>
                   <div class="next"></div>
               </div>
               

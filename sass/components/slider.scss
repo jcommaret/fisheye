@@ -2,17 +2,24 @@
 @use "../utils/mixins.scss" as m;
 
 #slider{
+	display:flex;
+	flex-direction: column;
+	padding-top:20px;
+	padding-bottom:20px;
+	.slide-container{
+		margin: auto;
+	}
 	#slide{
-		text-align: center;
-		margin-left: auto;
-		margin-right: auto;
 		video, img{
 			display: block;
 			margin-left: auto;
 			margin-right: auto;
+			object-fit: cover;
+      width: 800px;
+			height: 800px;
 		}
-		video{
-			width: 75%;
+		h2{
+			color : c.$red;
 		}
 	}
 	.previous{
@@ -31,4 +38,5 @@
 			}		
 		}
 	}
+	
 }

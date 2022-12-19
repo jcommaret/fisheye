@@ -23,7 +23,7 @@ class Image extends Media{
     return `<div class="media">
               <img class="square media-media lightbox-toogle" loading="lazy" src="./images/images/${this.image}">
               <div class="info">
-              <h2>${this.title}</h2>
+              <h2 class="media-title">${this.title}</h2>
                 
               <div class="likes-btn">
                 <div id="count">${this.likes} <i class="fa-regular fa-heart"></i></div>

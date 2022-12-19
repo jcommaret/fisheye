@@ -17,6 +17,7 @@ import { Dropdown } from '../utils/dropdown';
 import { CopyPhotographerName, CopyPrice } from '../utils/copyPhotographerName';
 import { sortbyDate, sortbyLikes, sortbyTitle } from '../utils/filters';
 import { getTotalLikes, IncrementLikes } from '../utils/likes';
+// import { IncrementTotalLikes } from '../utils/totalLikes';
 
 // Display medias
 export async function displayMedias(media) {
@@ -49,11 +50,12 @@ const init = async () => {
   Dropdown();
   CopyPhotographerName();
   CopyPrice();
-  getTotalLikes(medias);  
-  sortbyDate(medias);
-  sortbyLikes(medias);
-  sortbyTitle(medias);
+  getTotalLikes(medias)  
+  sortbyDate(medias)
+  sortbyLikes(medias)
+  sortbyTitle(medias)
   IncrementLikes()
+  // IncrementTotalLikes()
 };
 
 init();

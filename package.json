@@ -1,12 +1,16 @@
 {
   "devDependencies": {
+    "@babel/eslint-parser": "^7.19.1",
     "@babel/preset-env": "^7.18.10",
     "@fortawesome/fontawesome-free": "^6.2.1",
     "@squoosh/lib": "^0.4.0",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.5",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.1",
     "error-overlay-webpack-plugin": "^1.1.0",
+    "eslint": "^8.30.0",
+    "eslint-webpack-plugin": "^3.2.0",
     "file-loader": "^6.2.0",
     "image-minimizer-webpack-plugin": "^3.3.0",
     "imagemin": "^8.0.1",
@@ -78,9 +82,12 @@
     "webpack-sources": "^3.2.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "NODE_ENV=dev webpack",
-    "prod": "webpack"
+    "prod": "webpack",
+    "lint": "eslint --ext .js --max-warnings=0",
+    "lint-fix": "npm run lint -- --fix",
+    "test": "run lint && npm run test:run",
+    "test:run": "jest"
   },
   "repository": {
     "type": "git",

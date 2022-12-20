@@ -1,0 +1,12 @@
+{
+  "root": true,
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 8,
+    "parser": "@babel/eslint-parser"
+  },
+  "rules": {
+    "max-len": [1, 70, 2, {ignoreComments: true}],
+    "no-extra-semi": "error"
+  }
+}

@@ -1,20 +1,11 @@
 const path = require('path');
 const dev = process.env.NODE_ENV === "dev";
-const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const chalk = require("chalk");
-const ProgressBarPlugin = require("progress-bar-webpack-plugin");
-const ErrorOverlayPlugin = require('error-overlay-webpack-plugin')
-const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
-const smp = new SpeedMeasurePlugin();
+const ESLintPlugin = require('eslint-webpack-plugin');
 
-let config = smp.wrap({
+let config = {
   mode:"development",
   watch : dev,
   devtool: "cheap-module-source-map",
-  cache: {
-    type: 'filesystem',
-  },
   entry : {
     home : "./js/app.js",
     photographers : "./js/pages/photographer.js",
@@ -38,7 +29,6 @@ let config = smp.wrap({
           }
         }
       },
-     
       {
         test: /\.(sass|scss|css)$/,
         use: ['style-loader','css-loader','sass-loader'],
@@ -54,51 +44,12 @@ let config = smp.wrap({
       {
         test: /\.json$/,
         type: 'asset',
-      },
-      {
-        // convert all imported images to have max width 1000px
-        test: /\.(png|jpe?g|webp|tiff?)$/i,
-        use: [
-          "file-loader",
-          {
-            loader: "webpack-image-resize-loader",
-            options: {
-              width: 500,
-            },
-          },
-        ],
-      },
+      }
     ]
   },
   plugins:[
-    new CleanWebpackPlugin(),
-    new ProgressBarPlugin({
-      format: `:msg [:bar] ${chalk.green.bold(":percent")} (:elapsed s)`,
-    }),
-    new ErrorOverlayPlugin(),
+    new ESLintPlugin()
   ],
-  optimization: {
-    removeAvailableModules: false,
-    removeEmptyChunks: false,
-    splitChunks: false,
-    minimizer: [
-      new ImageMinimizerPlugin({
-        minimizer: {
-          implementation: ImageMinimizerPlugin.imageminMinify,
-          options: {
-            // Lossless optimization with custom option
-            // Feel free to experiment with options for better result for you
-            plugins: [
-              ["gifsicle", { interlaced: true }],
-              ["jpegtran", { progressive: true }],
-              ["optipng", { optimizationLevel: 5 }],
-            ],
-          },
-        },
-      }),
-    ],
-  },
-})
- 
+}
 
 module.exports = config

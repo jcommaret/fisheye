@@ -20,11 +20,10 @@ class Image extends Media{
     this.image = data.image; 
   }
   render(){
-    return `<div class="media lightbox-toogle">
-              <img class="square media-media" loading="lazy" src="./images/images/${this.image}">
+    return `<div class="media">
+              <img class="square media-media lightbox-toogle" loading="lazy" src="./images/images/${this.image}">
               <div class="info">
               <h2 class="media-title">${this.title}</h2>
-                
               <div class="likes-btn">
                 <div id="count">${this.likes} <i class="fa-regular fa-heart"></i></div>
               </div>
@@ -38,8 +37,8 @@ export class Video extends Media{
     this.video = data.video; 
   }
   render(){
-    return `<div class="media lightbox-toogle">
-              <video class="square media-media" src="./images/images/${this.video}"></video>
+    return `<div class="media">
+              <video class="square media-media lightbox-toogle" src="./images/images/${this.video}"></video>
               <div class="info">
                 <h2 class="media-title">${this.title}</h2>
                 <div class="likes-btn">

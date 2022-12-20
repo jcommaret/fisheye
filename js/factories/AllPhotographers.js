@@ -3,11 +3,19 @@ import { getPhotographers } from "../fetch_api";
 getPhotographers();
 
 export function photographerFactory(data) {
-    const { id, name, city, country, portrait, tagline, price } = data;
+    const { 
+        id, 
+        name, 
+        city, 
+        country, 
+        portrait, 
+        tagline, 
+        price 
+    } = data;
+    
     const picture = `../images/photographers/${portrait}`;
 
     function getUserCardDOM() {
-        
         const article = document.createElement( 'article' );       
         article.addEventListener("click", function () { goTo(id) });
         article.classList.add("article");
@@ -45,7 +53,16 @@ export function photographerFactory(data) {
 
         return (article);
     }
-    return { id, name, city, country, price, picture, tagline, getUserCardDOM }
+    return { 
+        id, 
+        name, 
+        city,
+        country, 
+        price, 
+        picture, 
+        tagline, 
+        getUserCardDOM 
+    }
 }
 
 const goTo = (id) => {

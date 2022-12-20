@@ -1,12 +1,12 @@
-import { displayMedias } from "../pages/photographer";
+import { displayMedias } from "../pages/photographer"
 
 export async function sortbyDate(medias){
   const btnDate = document.querySelector('.date');
   btnDate.addEventListener('click', (e) => {
     medias.sort(function(a, b)
-    { return new Date(b.date) - new Date(a.date)});;
+    { return new Date(b.date) - new Date(a.date)});
     displayMedias(medias);
-  })};
+  })}
 
 export async function sortbyLikes(medias){
   const btnLikes = document.querySelector('.btn.likes');
@@ -14,7 +14,7 @@ export async function sortbyLikes(medias){
     medias.sort(function(a, b)
     { return b.likes - a.likes })
     displayMedias(medias);
-})};
+})}
 
 export async function sortbyTitle(medias){
   const btnTitle = document.querySelector('.btn.title');
@@ -24,5 +24,5 @@ export async function sortbyTitle(medias){
     }
   );
   displayMedias(medias);
-})};
+})}
 

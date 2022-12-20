@@ -19,7 +19,7 @@ let checkFirstName = () => {
     if (!isRequired(firstname)) {
         showError(firstEl, 'Votre prénom ne doit pas être vide.');
     } else if (!isFirstNameValid(firstname)) {
-        showError(firstEl, 'Veuillez entrer 2 caractères ou plus pour le champ du prénom.')
+        showError(firstEl, 'Veuillez entrer 2 charactères minimum')
     } else {
         showSuccess(firstEl);
     valid = true;
@@ -38,7 +38,7 @@ let checkLastName = () => {
   if (!isRequired(lastname)) {
         showError(lastEl, 'Votre nom ne doit pas être vide.');
   } else if (!isLastNameValid(lastname)) {
-        showError(lastEl, 'Veuillez entrer 2 caractères ou plus pour le champ du nom.')
+        showError(lastEl, 'Veuillez entrer 2 charactères minimum')
   } else {
         showSuccess(lastEl);
     valid = true;
@@ -47,10 +47,14 @@ let checkLastName = () => {
 };
 
 // Email
+
+// eslint-disable
 let isEmailValid = (email) => {
     let regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return regex.test(email);
 };
+/*eslint-enable */
+
 let checkEmail = () => {
     let valid = false;
     let email = emailEl.value.trim();
@@ -85,11 +89,11 @@ let showSuccess = (input) => {
 
 // Soumission du formulaire
 form.addEventListener('submit', function (e) {
-    e.preventDefault();
+    e.preventDefault()
     // Validation des champs
-    let isEmailValid = checkEmail(),
-        isFirstNameValid = checkFirstName(),
-        isLastNameValid = checkLastName();
+    let isEmailValid = checkEmail()
+        isFirstNameValid = checkFirstName()
+        isLastNameValid = checkLastName()
         
     // Validation du formulaire    
     let isFormValid = 
@@ -98,9 +102,9 @@ form.addEventListener('submit', function (e) {
         isLastNameValid 
         // si le formulaire est valide, crée un utilisateur, et présente le message de remerciement. 
     if (isFormValid) {
-        createUser();
+        createUser()
     }
-});
+})
 
 form.addEventListener('input',function (e) {
     switch (e.target.id) {
@@ -129,7 +133,7 @@ function createUser() {
         }
     }
     // creation du nouvel utilisateur
-    const newContact = new User(firstname, lastname, email, message );
-    Array.prototype.push.apply(newContact);
-    console.log(newContact);
-};
+    const newContact = new User(firstname, lastname, email, message)
+    Array.prototype.push.apply(newContact)
+    console.log(newContact)
+}

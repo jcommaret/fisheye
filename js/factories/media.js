@@ -9,7 +9,8 @@ class Media{
   }
   render(){
     return `<div class="media">
-              <img src="https://via.placeholder.com/No+Media+To+Render">
+              <img 
+                src="https://via.placeholder.com/No+Media+To+Render">
             </div>`;
   }
 }
@@ -21,11 +22,20 @@ class Image extends Media{
   }
   render(){
     return `<div class="media">
-              <img class="square media-media lightbox-toogle" loading="lazy" src="./images/images/${this.image}">
-              <div class="info">
-              <h2 class="media-title">${this.title}</h2>
-              <div class="likes-btn">
-                <div id="count">${this.likes} <i class="fa-regular fa-heart"></i></div>
+              <img class="
+                square 
+                media-media 
+                lightbox-toogle" 
+                loading="lazy" 
+                src="./images/images/${this.image}">
+              
+                <div class="info">
+                <h2 class="media-title">${this.title}</h2>
+                <div class="likes-btn">
+                
+                <div id="count">${this.likes}
+                  <i class="fa-regular fa-heart"></i>
+                </div>
               </div>
             </div>`;
     }
@@ -38,11 +48,15 @@ export class Video extends Media{
   }
   render(){
     return `<div class="media">
-              <video class="square media-media lightbox-toogle" src="./images/images/${this.video}"></video>
+              <video  class="square media-media lightbox-toogle" 
+                      src="./images/images/${this.video}">
+              </video>
               <div class="info">
                 <h2 class="media-title">${this.title}</h2>
                 <div class="likes-btn">
-                  <div id="count">${this.likes} <i class="fa-regular fa-heart"></i></div>
+                  <div id="count">${this.likes} 
+                    <i class="fa-regular fa-heart"></i>
+                  </div>
                 </div>
               </div>
             </div>`;

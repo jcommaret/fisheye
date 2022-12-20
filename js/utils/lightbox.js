@@ -18,13 +18,17 @@ export function lightboxwindow(event) {
       setTimeout(()=>{
         lightbox.className = "lightbox hide";
       },200)
-    };
-  });
+    }
+  })
   setCurrentMedia(event)
 }
 
 export function init() {
-  const lightboxBtn = document.querySelectorAll(".lightbox-toogle");
-  lightboxBtn.forEach((button) => button.addEventListener("click", (e) => lightboxwindow(e)));
-};
+  const lightboxBtn = document.querySelectorAll(".lightbox-toogle")
+  lightboxBtn.forEach(
+    (button) => button.addEventListener(
+      "click", (e) => lightboxwindow(e)
+      )
+    )
+}
 

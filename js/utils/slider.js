@@ -2,7 +2,7 @@
 
 // Variables globales
 let medias = [0];
-let mediasTitle = [0];;
+let mediasTitle = [0];
 // TODO : Numéro du slide (a updater avec le numero du slide courant quand on click sur une image)
 let numero = [0];
 
@@ -16,7 +16,11 @@ export function ChangeSlide(sens) {
   let mediaTitle = slideTitle[numero];
   // Récupération des données du slide
   // Construction du slide
-  const mediaContent = buildMedia(media.tagName, media.src, mediaTitle.innerHTML);
+  const mediaContent = buildMedia(
+    media.tagName, 
+    media.src, 
+    mediaTitle.innerHTML
+  );
   
   // Affichage du slide
   document.getElementById("slide").innerHTML = mediaContent;
@@ -27,7 +31,10 @@ export function ChangeSlide(sens) {
 // Récupération du média courant
 export function setCurrentMedia(event){
   const node=event.target;
-  if(node.tagName.toLowerCase()=== "img" || node.tagName.toLowerCase()=== "video" ){
+  if( node.tagName.toLowerCase()=== "img" || 
+      node.tagName.toLowerCase()=== "video" 
+    )
+  {
     // Récupération du numéro du slide
     numero = medias.findIndex(media => media===node)
     if(numero){
@@ -48,20 +55,26 @@ function buildMedia(tagName, source, title) {
   }
   // Si le tagname est une video, on retourne une balise video
   else if (tagName.toLowerCase() === "video"){
-    return `<video src="${source}" controls></video><h2>${title}</h2>`;
+    return `
+    <video src="${source}" controls></video><h2>${title}</h2>
+    `;
   }
 }
 
 export function init() {
   // Récupération des médias et des titres dans le DOM
-  medias =  Array.from(document.querySelectorAll(".media-media"));
-  mediasTitle =  Array.from(document.querySelectorAll(".media-title"));
+  medias =  Array.from(
+    document.querySelectorAll(".media-media")
+  )
+  mediasTitle =  Array.from(
+    document.querySelectorAll(".media-title")
+  )
   
   // Récupération des boutons next/previous
   const next = document.querySelector(".next");
-  const previous = document.querySelector(".previous");
+  const previous = document.querySelector(".previous")
   
   // Ajout des évènements
-  next.addEventListener("click", () => ChangeSlide(1));
-  previous.addEventListener("click", () => ChangeSlide(-1));
+  next.addEventListener("click", () => ChangeSlide(1))
+  previous.addEventListener("click", () => ChangeSlide(-1))
 }

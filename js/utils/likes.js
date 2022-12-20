@@ -1,16 +1,16 @@
 
 export function getTotalLikes(data){
-  let totalLikes = 0;
+  let totalLikes = 0
   data.forEach((media) => {
-    totalLikes +=media.likes;
-  });
+    totalLikes +=media.likes
+  })
   document.querySelector('.compteurLikes').innerHTML = 
   `${totalLikes} `+ `<i class="fa-solid fa-heart"></i>`
 }
 
 export function IncrementLikes(){
   // get all likes buttons
-  const hearts = document.querySelectorAll(".likes-btn");
+  const hearts = document.querySelectorAll(".likes-btn")
   // add event listener on each button
   Array.from(hearts).forEach(heart => {
     heart.addEventListener("click", (e)=>{
@@ -43,13 +43,13 @@ export function IncrementLikes(){
 // Dans l'idée 
 export function IncrementTotalLikes(){
   const nodeLike = heart.querySelector("#count").textContent
-  const arr = Array.from(nodeLike);
-  console.log(arr);
+  const arr = Array.from(nodeLike)
+  console.log(arr)
   const sum = arr.reduce((accumulator, value) => {
-    return accumulator + value;
+    return accumulator + value
   
-  }, 0);
-  console.log(sum);
+  }, 0)
+  console.log(sum)
   document.querySelector('.compteurLikes').innerHTML = 
   `${sum} `+ `<i class="fa-solid fa-heart"></i>`
 }

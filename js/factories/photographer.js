@@ -1,24 +1,24 @@
 // a adapter
 class Media{
   constructor(data){
-    this.id = data.id;
-    this.name = data.name;
-    this.city = data.city;
-    this.country = data.country;
-    this.tagline = data.tagline;
-    this.price = data.price;
+    this.id = data.id
+    this.name = data.name
+    this.city = data.city
+    this.country = data.country
+    this.tagline = data.tagline
+    this.price = data.price
   }
   render(){
     return `<div class="media">
               <img src="https://via.placeholder.com/No+Media">
-            </div>`;
+            </div>`
   }
 }
 
 class Image extends Media{
   constructor(data){
     super(data)
-    this.portrait = data.portrait;
+    this.portrait = data.portrait
   }
 
   render(){
@@ -45,7 +45,7 @@ class Image extends Media{
                       src="images/photographers/${this.portrait}" 
                       alt="photo de ${this.name}">
               </div>
-            </div>`;
+            </div>`
     }
 }
 

@@ -1,3 +1,3 @@
-import { init } from "./pages/home";
+import { init } from "./pages/home"
 
-init();
+init()

@@ -14,8 +14,8 @@ export function modalwindow() {
       modal.classList.replace("open","hide")
     }
 
-    let previous = undefined;
-    // let next = undefined;
+    let previous = undefined
+    // let next = undefined
     
     document.addEventListener('keyup', function(event){
       // Close modale au moment de l'escape
@@ -29,7 +29,7 @@ export function modalwindow() {
         if(event.key === "Tab"){
           event.preventDefault()
           if (previous===fields[0]){
-            fields[fields.length-1].focus();
+            fields[fields.length-1].focus()
 
           }    
         }
@@ -44,13 +44,13 @@ export function modalwindow() {
 
       console.log(previous)
       // actions sur le tab
-      previous = event.target;
-      // next = event.target;
+      previous = event.target
+      // next = event.target
   })
 }
 
 export function init() {
-  const modalBtn = document.querySelectorAll(".modal-toogle");
+  const modalBtn = document.querySelectorAll(".modal-toogle")
   modalBtn.forEach(
     (button) => button.addEventListener(
       "click", () => modalwindow()

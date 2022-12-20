@@ -13,11 +13,11 @@ export async function displayData(photographers) {
         const photographerModel = photographerFactory(photographer)
         const userCardDOM = photographerModel.getUserCardDOM()
         photographersSection.appendChild(userCardDOM)
-    });
+    })
 }
 
 export async function init() {
     // Récupère les datas des photographes
-    const { photographers } = await getData();
-    displayData(photographers);
+    const { photographers } = await getData()
+    displayData(photographers)
 }

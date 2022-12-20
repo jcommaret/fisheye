@@ -2,10 +2,9 @@
 
 // Variables globales
 let medias = [];
-let mediasTitle = [];
-
+let mediasTitle = [];;
 // TODO : Numéro du slide (a updater avec le numero du slide courant quand on click sur une image)
-let numero = 0;
+let numero = [];
 
 // Changement de slide
 export function ChangeSlide(sens) {
@@ -13,7 +12,6 @@ export function ChangeSlide(sens) {
   let slide = [...medias];
   let slideTitle = [...mediasTitle];
   
-
   if (numero < 0)
       numero = slide.length - 1
 
@@ -22,7 +20,8 @@ export function ChangeSlide(sens) {
   
   // Récupération des données du slide
   const media = slide[numero-1];
-  const mediaTitle = slideTitle[numero];
+  const mediaTitle = slideTitle[numero-1];
+  console.log(media, mediaTitle);
 
   // Construction du slide
   const mediaContent = buildMedia(media.tagName, media.src, mediaTitle.innerHTML);
@@ -34,37 +33,41 @@ export function ChangeSlide(sens) {
   numero = numero + sens;
 }
 
+// Récupération du média courant
+export function setCurrentMedia(event){
+  const node=event.target;
+  if(node.tagName.toLowerCase()=== "img" || node.tagName.toLowerCase()=== "video" ){
+    // Récupération du numéro du slide
+    numero = medias.findIndex(media => media===node)
+    if(numero){
+      ChangeSlide(0)
+      console.log(numero);
+    }
+  }
+}
+
 // Construction du slide
 function buildMedia(tagName, source, title) {
+  // Si le tagname est une image, on retourne une balise img
   if (tagName.toLowerCase() === "img"){
     return `<img src="${source}" alt=""/><h2>${title}</h2>`;
-
-  }else if (tagName.toLowerCase() === "video"){
+  }
+  // Si le tagname est une video, on retourne une balise video
+  else if (tagName.toLowerCase() === "video"){
     return `<video src="${source}" controls></video><h2>${title}</h2>`;
   }
 }
 
-// Initialisation du slider
 export function init() {
   // Récupération des médias et des titres dans le DOM
   medias =  Array.from(document.querySelectorAll(".media-media"));
   mediasTitle =  Array.from(document.querySelectorAll(".media-title"));
+  
   // Récupération des boutons next/previous
   const next = document.querySelector(".next");
   const previous = document.querySelector(".previous");
+  
   // Ajout des évènements
   next.addEventListener("click", () => ChangeSlide(1));
   previous.addEventListener("click", () => ChangeSlide(-1));
-}
-
-export function setCurrentMedia(event){
-  const node=event.target;
-  console.log(node)
-  if(node.tagName.toLowerCase()==='img' || node.tagName.toLowerCase()==='video'){
-    numero=medias.findIndex(media=>media===node)
-    console.log(numero)
-    if(numero){
-      ChangeSlide(0)
-    }
-  }
 }

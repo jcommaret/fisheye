@@ -1,6 +1,6 @@
-const path = require('path');
-const dev = process.env.NODE_ENV === "dev";
-const ESLintPlugin = require('eslint-webpack-plugin');
+const path = require('path')
+const dev = process.env.NODE_ENV === "dev"
+const ESLintPlugin = require('eslint-webpack-plugin')
 
 let config = {
   mode:"development",

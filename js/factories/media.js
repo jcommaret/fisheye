@@ -25,8 +25,7 @@ class Image extends Media{
               <img class="
                 square 
                 media-media 
-                lightbox-toogle" 
-                loading="lazy" 
+                lightbox-toogle"
                 src="./images/images/${this.image}">
               
                 <div class="info">

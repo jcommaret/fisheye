@@ -3,7 +3,6 @@
 // Variables globales
 let medias = [0]
 let mediasTitle = [0]
-// TODO : Numéro du slide (a updater avec le numero du slide courant quand on click sur une image)
 let numero = [0]
 
 // Changement de slide
@@ -16,7 +15,7 @@ export function ChangeSlide(sens) {
   let mediaTitle = slideTitle[numero]
   // Récupération des données du slide
   // Construction du slide
-  const mediaContent = buildMedia(
+  let mediaContent = buildMedia(
     media.tagName, 
     media.src, 
     mediaTitle.innerHTML
@@ -28,14 +27,15 @@ export function ChangeSlide(sens) {
   numero = numero + sens
 }
 
+
 // Récupération du média courant
 export function setCurrentMedia(event){
-  const node=event.target
+  let node=event.target
   if( node.tagName.toLowerCase()=== "img" || 
       node.tagName.toLowerCase()=== "video" 
     )
   {
-    // Récupération du numéro du slide
+  // Récupération du numéro du slide
     numero = medias.findIndex(media => media===node)
     if(numero){
       ChangeSlide(1)
@@ -48,16 +48,16 @@ function buildMedia(tagName, source, title) {
   // Si le tagname est une image, on retourne une balise img
   console.log(tagName)
   if (tagName.toLowerCase() === "img"){
-    return `<img src="${source}" alt=""/><h2>${title}</h2>`
+    return `<img src="${source}"/>
+    <h2>${title}</h2>`
   }
-  else if(tagName.toLowerCase() == undefined){
-    return `<p>No Media</p>`
+  else if(tagName.toLowerCase() === "video"){
+    return `<video src="${source}" controls></video>
+    <h2>${title}</h2>`
   }
-  // Si le tagname est une video, on retourne une balise video
-  else if (tagName.toLowerCase() === "video"){
-    return `
-    <video src="${source}" controls></video><h2>${title}</h2>
-    `
+  else if(tagName.toLowerCase() === undefined){
+    return `<h2>Erreur : ${tagName} n'est pas un tag valide</h2>`
+
   }
 }
 

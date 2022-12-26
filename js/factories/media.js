@@ -27,7 +27,8 @@ class Image extends Media{
                 media-media 
                 lightbox-toogle" 
                 loading="lazy" 
-                src="./images/images/${this.image}">
+                src="./images/images/${this.image}"
+                alt="${this.title}">
               
                 <div class="info">
                 <h2 class="media-title">${this.title}</h2>
@@ -49,7 +50,8 @@ export class Video extends Media{
   render(){
     return `<div class="media">
               <video  class="square media-media lightbox-toogle" 
-                      src="./images/images/${this.video}">
+                      src="./images/images/${this.video} 
+                      alt="${this.title}">
               </video>
               <div class="info">
                 <h2 class="media-title">${this.title}</h2>

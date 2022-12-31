@@ -134,5 +134,6 @@ function createUser() {
     // creation du nouvel utilisateur
     const newContact = new User(firstname, lastname, email, message)
     Array.prototype.push.apply(newContact)
+    
     console.log(newContact)
 }

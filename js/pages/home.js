@@ -16,8 +16,10 @@ export async function displayData(photographers) {
     })
 }
 
+// Init function
 export async function init() {
-    // Récupère les datas des photographes
     const { photographers } = await getData()
     displayData(photographers)
 }
+
+init()

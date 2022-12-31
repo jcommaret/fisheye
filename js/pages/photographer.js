@@ -8,19 +8,16 @@ import * as lightbox from '../utils/lightbox'
 import * as slider from '../utils/slider'
 
 import "../utils/form"
-// import JS functions
+
 import { getMediaById, getPhotographersById } from "../fetch_api"
+
 import { MediaFactory } from "../factories/media"
 import { PhotographerFactory } from "../factories/photographer"
 
 import { Dropdown } from '../utils/dropdown'
-import { CopyPhotographerName} from '../utils/copyPhotographerName'
-import { CopyPrice } from '../utils/copyPhotographerName'
-import { sortbyDate } from '../utils/filters'
-import { sortbyLikes } from '../utils/filters'
-import { sortbyTitle } from '../utils/filters'
-import { getTotalLikes, IncrementLikes } from '../utils/likes'
-// import { IncrementTotalLikes } from '../utils/totalLikes'
+import { CopyPhotographerName, CopyPrice} from '../utils/copyInformations'
+import { sortbyLikes, sortbyDate, sortbyTitle } from '../utils/filters'
+import { getTotalLikes, IncrementLikes, AddTotalLikes, RemoveTotalLikes } from '../utils/likes'
 
 // Display medias
 export async function displayMedias(media) {
@@ -48,21 +45,28 @@ export async function displayPhotographer(photographers) {
   slider.init()
 }
 
+// Init
 const init = async () => {
   const id = new URL(document.location).searchParams.get("id")
   const medias = await getMediaById(parseInt(id))
   const photographers = await getPhotographersById(parseInt(id))
+  // Display medias and photographers
   displayMedias(medias)
   displayPhotographer(photographers)
+  // Dropdown
   Dropdown()
+  // Copys
   CopyPhotographerName()
   CopyPrice()
-  getTotalLikes(medias)  
+  // Filters
   sortbyDate(medias)
   sortbyLikes(medias)
   sortbyTitle(medias)
+  // Likes
+  getTotalLikes(medias)  
   IncrementLikes()
-  // IncrementTotalLikes()
+  AddTotalLikes()
+  
 }
 
 init()

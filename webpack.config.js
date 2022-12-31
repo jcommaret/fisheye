@@ -7,7 +7,7 @@ let config = {
   watch : dev,
   devtool: "cheap-module-source-map",
   entry : {
-    home : "./js/app.js",
+    home : "./js/pages/home.js",
     photographers : "./js/pages/photographer.js",
   },
   output : {

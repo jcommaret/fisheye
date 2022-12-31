@@ -10,7 +10,7 @@ export function getTotalLikes(data){
 
 export function IncrementLikes(){
   // get all likes buttons
-  const hearts = document.querySelectorAll(".likes-btn")
+  let hearts = document.querySelectorAll(".likes-btn")
   // add event listener on each button
   Array.from(hearts).forEach(heart => {
     heart.addEventListener("click", (e)=>{
@@ -38,19 +38,11 @@ export function IncrementLikes(){
   })
 }
 
-// TODO:
-
-// Dans l'idée 
-export function IncrementTotalLikes(){
-  const nodeLike = heart.querySelector("#count").textContent
-  const arr = Array.from(nodeLike)
+export function AddTotalLikes(){
+   
+  let hearts = document.querySelectorAll(".likes-btn").textContent
+  console.log(hearts)
+  const arr = Array.from(hearts)
   console.log(arr)
-  const sum = arr.reduce((accumulator, value) => {
-    return accumulator + value
   
-  }, 0)
-  console.log(sum)
-  document.querySelector('.compteurLikes').innerHTML = 
-  `${sum} `+ `<i class="fa-solid fa-heart"></i>`
 }
-

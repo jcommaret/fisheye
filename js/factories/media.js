@@ -31,9 +31,9 @@ class Image extends Media{
                 <div class="info">
                 <h2 class="media-title">${this.title}</h2>
                 <div class="likes-btn">
-                
-                <div id="count" class="count">${this.likes}
-                  <i class="fa-regular fa-heart"></i>
+                  <div id="count" class="count">${this.likes}
+                    <i class="fa-regular fa-heart"></i>
+                  </div>
                 </div>
               </div>
             </div>`

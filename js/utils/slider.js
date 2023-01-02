@@ -49,7 +49,6 @@ export function setCurrentMedia(event){
 // Construction du slide
 function buildMedia(tagName, source, title) {
   // Si le tagname est une image, on retourne une balise img
-  console.log(tagName)
   if (tagName.toLowerCase() === "img"){
     return `<img src="${source}" alt=""/><h2>${title}</h2>`
   }

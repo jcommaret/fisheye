@@ -39,10 +39,13 @@ export function IncrementLikes(){
 }
 
 export function AddTotalLikes(){
-   
-  let hearts = document.querySelectorAll(".likes-btn").textContent
-  console.log(hearts)
-  const arr = Array.from(hearts)
-  console.log(arr)
-  
-}
+  const nbLike = document.querySelectorAll(".count")
+  const countnBLike = nbLike.textContent
+  console.log("like :", countnBLike)
+  const nbLikeInt = parseInt(countnBLike)
+  console.log("int :", nbLikeInt)
+  const arrayFromLikes = Array.from(nbLikeInt)
+  const sum = arrayFromLikes.reduce((total, item) => total + item, 0)
+  console.log("sum :", sum)
+  return sum
+}   

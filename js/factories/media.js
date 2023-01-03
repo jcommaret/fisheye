@@ -21,22 +21,20 @@ class Image extends Media{
     this.image = data.image 
   }
   render(){
-    return `<div class="media">
-              <img class="
-                square 
-                media-media 
-                lightbox-toogle"
-                src="./images/images/${this.image}">
-              
-                <div class="info">
-                <h2 class="media-title">${this.title}</h2>
-                <div class="likes-btn">
-                  <div id="count" class="count">${this.likes}
-                    <i class="fa-regular fa-heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>`
+    const div = document.createElement('div')
+    div.setAttribute('id', this.id)
+    div.setAttribute('class', 'media')
+    div.innerHTML = `<img class="square media-media lightbox-toogle" src="./images/images/${this.image}"/>`
+    div.innerHTML += `<div class="info">
+                        <h2 class="media-title">${this.title}</h2>
+                        <div class="likes-btn">
+                          <div id="count" class="count">${this.likes}
+                            <i class="fa-regular  fa-heart"></i>
+                          </div>
+                        </div>
+                      </div>`
+    
+    return div
     }
 }
 
@@ -46,19 +44,20 @@ export class Video extends Media{
     this.video = data.video 
   }
   render(){
-    return `<div class="media">
-              <video  class="square media-media lightbox-toogle" 
-                      src="./images/images/${this.video}">
-              </video>
-              <div class="info">
-                <h2 class="media-title">${this.title}</h2>
-                <div class="likes-btn">
-                  <div id="count" class="count">${this.likes} 
-                    <i class="fa-regular fa-heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>`
+    const div = document.createElement('div')
+    div.setAttribute('id', this.id)
+    div.setAttribute('class', 'media')
+    div.innerHTML = `<video  class="square media-media lightbox-toogle" src="./images/images/${this.video}">`
+    div.innerHTML += `<div class="info">
+                        <h2 class="media-title">${this.title}</h2>
+                        <div class="likes-btn">
+                          <div id="count" class="count">${this.likes}
+                            <i class="fa-regular  fa-heart"></i>
+                          </div>
+                        </div>
+                      </div>`
+    
+    return div
   }
 }
 

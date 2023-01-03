@@ -22,11 +22,19 @@ import { getTotalLikes, IncrementLikes, AddTotalLikes, RemoveTotalLikes } from '
 // Display medias
 export async function displayMedias(media) {
   const mediasSection = document.querySelector(".medias_section")
-  mediasSection.innerHTML=" " 
   media.forEach((m) => {
     const type = m.image? "image" : "video"    
     const mediaModel = new MediaFactory(m, type)
-    mediasSection.innerHTML+=mediaModel.render() 
+    const node = mediaModel.render()
+    const idNode = node.getAttribute("id")
+    const numberIdNode = parseInt(idNode)
+    if (m.id === numberIdNode){
+      const oldNode = document.getElementById(idNode)
+      mediasSection.appendChild(oldNode)
+    } 
+    else{
+     mediasSection.appendChild(node) 
+    }
   })
 }
 
@@ -65,8 +73,6 @@ const init = async () => {
   // Likes
   getTotalLikes(medias)  
   IncrementLikes()
-  AddTotalLikes()
-  
 }
 
 init()

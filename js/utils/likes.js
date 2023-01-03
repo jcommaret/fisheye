@@ -5,7 +5,7 @@ export function getTotalLikes(data){
     totalLikes +=media.likes
   })
   document.querySelector('.compteurLikes').innerHTML = 
-  `${totalLikes} `+ `<i class="fa-solid fa-heart"></i>`
+  `<span class="tLikes">${totalLikes} </span>`+ `<i class="fa-solid fa-heart"></i>`
 }
 
 export function IncrementLikes(){
@@ -26,6 +26,7 @@ export function IncrementLikes(){
         heart.setAttribute("data-like",true)
         nodeLike.innerHTML = 
         `${nbLike} ` + `<i class="fa-solid fa-heart"></i>`
+        updateTotalLikes(1)
       }
       // if the button is liked, remove 1 like and change the icon
       else{
@@ -33,19 +34,14 @@ export function IncrementLikes(){
         heart.removeAttribute("data-like")
         nodeLike.innerHTML = 
         `${nbLike} ` + `<i class="fa-regular fa-heart"></i>`
+        updateTotalLikes(-1)
       }
     })
   })
 }
 
-export function AddTotalLikes(){
-  const nbLike = document.querySelectorAll(".count")
-  const countnBLike = nbLike.textContent
-  console.log("like :", countnBLike)
-  const nbLikeInt = parseInt(countnBLike)
-  console.log("int :", nbLikeInt)
-  const arrayFromLikes = Array.from(nbLikeInt)
-  const sum = arrayFromLikes.reduce((total, item) => total + item, 0)
-  console.log("sum :", sum)
-  return sum
-}   
+function updateTotalLikes(like){
+  let totalLikes = document.querySelector('.tLikes').textContent
+  totalLikes = parseInt(totalLikes) + like
+  document.querySelector('.tLikes').innerHTML = totalLikes
+}

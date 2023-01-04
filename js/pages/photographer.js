@@ -33,7 +33,7 @@ export async function displayMedias(media) {
       mediasSection.appendChild(oldNode)
     } 
     else{
-     mediasSection.appendChild(node) 
+      mediasSection.appendChild(node) 
     }
   })
 }

@@ -2,6 +2,13 @@
 @use "../utils/mixins.scss" as m;
 @use "../utils/fonts.scss" as f;
 
+
+button{
+  border:none;
+  background-color: none;
+  border-radius: 5px;
+}
+
 .btn-contact{
   align-items: center;
   justify-content: center;

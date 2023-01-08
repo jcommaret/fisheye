@@ -42,8 +42,8 @@
                      <small></small>
                   </div>
                
-                  <div>
-                     <input class="btn btn-contact fields" type="submit" tabindex="0"></input>                  
+                  <div>  
+                     <input class="btn btn-contact fields" aria-label="Envoyer" type="submit" tabindex="0"></input>                  
                   </div>
                </form>
             </div>
@@ -53,6 +53,7 @@
          <!--lightbow-->
          <div class="lightbox" aria-hidden="true" role="dialog" aria-describedby="lightboxTitle">
             <span tabindex="0"></span>
+            <h2 id="lightboxTitle">Lightbox</h2>
             <div class="lightbox-btn--close lightbox-toogle" tabindex="0">Close Lightbox</div>        
             <div class="lightbox-body">
                <div id="slider">
@@ -76,6 +77,7 @@
          </header>
 
          <main class="main-wrapper">
+            <!--Photographer-->
             <section class="photograph">
             </section>
 
@@ -84,23 +86,19 @@
                <div class="filter_section">
                   Trier par
                   <div class="dropdown">
-                     <input class="text-box" id="search-input" type="text" placeholder="Popularité">
+                     <input class="text-box" id="search-input" type="text" placeholder="Popularité" aria-label="Filtrer">
                      <div class="options">
                         <div class="btn likes">Popularité</div>
                         <div class="btn date">Date</div>
                         <div class="btn title">Titre</div>
                      </div>
                   </div>
-               
                </div>
-                              
                <div class="medias_section"></div>
-            
             </section>
-
+            
             <div class="bar">
                <div class="compteurLikes">
-               
                </div>
                <div class="price">
                </div>
@@ -109,6 +107,5 @@
       </div>
       
       <script src="dist/photographers.bundle.js"></script>
-
    </body>
 </html>

@@ -99,7 +99,7 @@ form.addEventListener('submit', function (e) {
         isEmailValid && 
         isFirstNameValid && 
         isLastNameValid 
-        // si le formulaire est valide, crée un utilisateur, et présente le message de remerciement. 
+        // si le formulaire est valide, crée un utilisateur
     if (isFormValid) {
         createUser()
     }
@@ -134,6 +134,5 @@ function createUser() {
     // creation du nouvel utilisateur
     const newContact = new User(firstname, lastname, email, message)
     Array.prototype.push.apply(newContact)
-    
     console.log(newContact)
 }

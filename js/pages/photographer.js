@@ -17,7 +17,7 @@ import { PhotographerFactory } from "../factories/photographer"
 import { Dropdown } from '../utils/dropdown'
 import { CopyPhotographerName, CopyPrice} from '../utils/copyInformations'
 import { sortbyLikes, sortbyDate, sortbyTitle } from '../utils/filters'
-import { getTotalLikes, IncrementLikes, AddTotalLikes, RemoveTotalLikes } from '../utils/likes'
+import { getTotalLikes, IncrementLikes } from '../utils/likes'
 
 // Display medias
 export async function displayMedias(media) {

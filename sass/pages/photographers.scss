@@ -2,52 +2,6 @@
 @use "../utils/mixins.scss" as m;
 @use "../utils/fonts.scss" as f;
 
-
-button{
-  border:none;
-  background-color: none;
-  border-radius: 5px;
-}
-
-.btn-contact{
-  align-items: center;
-  justify-content: center;
-  width:170px;
-  height:69px;
-  border: none;
-  border-radius: 5px;
-  font-size: 18px;
-  font-family: f.$dm-sans;
-  line-height: 23px;
-  font-weight: 700;
-  font-style: normal;
-  color: c.$white;
-  background-color: c.$red;
-  &:hover{
-    background-color: #DB8876;
-    color:#000;
-  }
-}
-.modal{
-  .btn-contact{
-    &:hover{
-      color: c.$white;
-      background-color: c.$red;
-    }
-  }
-}
-
-textarea{
-  border:none;
-  border-radius:5px;
-  padding:10px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.photographer_section{
-  margin-top:50px;
-}
-
 .photograph{
   &-header {
     background-color: c.$llg;

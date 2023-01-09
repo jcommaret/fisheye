@@ -41,8 +41,6 @@ export function modalwindow() {
           }
         }
       }
-
-      console.log(previous)
       // actions sur le tab
       previous = event.target
       // next = event.target

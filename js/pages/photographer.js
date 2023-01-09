@@ -22,17 +22,21 @@ import { getTotalLikes, IncrementLikes } from '../utils/likes'
 // Display medias
 export async function displayMedias(media) {
   const mediasSection = document.querySelector(".medias_section")
+  const AllMediasArray = Array.from(document.querySelectorAll(".media"))
+  
   media.forEach((m) => {
     const type = m.image? "image" : "video"    
     const mediaModel = new MediaFactory(m, type)
-    const node = mediaModel.render()
-    const idNode = node.getAttribute("id")
-    const numberIdNode = parseInt(idNode)
-    if (m.id === numberIdNode){
-      const oldNode = document.getElementById(idNode)
-      mediasSection.appendChild(oldNode)
-    } 
+    // on fabrique un noeud
+    const node = mediaModel.render()  
+    // on cherche si le noeud existe déjà dans le DOM
+    const dom_node = AllMediasArray.find((n_media) => n_media.getAttribute("id") === m.id.toString())
+    if (dom_node) {
+      // déplace le noeud présent en fonction du tri (au tri)
+      mediasSection.appendChild(dom_node)
+    }
     else{
+      // si il n'y a pas de noeud, il ajoute celui qu'il a fabriqué (au chargement de page) 
       mediasSection.appendChild(node) 
     }
   })

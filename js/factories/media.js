@@ -24,7 +24,7 @@ class Image extends Media{
     const div = document.createElement('div')
     div.setAttribute('id', this.id)
     div.setAttribute('class', 'media')
-    div.innerHTML = `<img class="square media-media lightbox-toogle" src="./images/images/${this.image}"/>`
+    div.innerHTML = `<img class="square media-media lightbox-toogle" src="./images/images/${this.image}" alt="photo : ${this.title}"/>`
     div.innerHTML += `<div class="info">
                         <h2 class="media-title">${this.title}</h2>
                         <div class="likes-btn">

@@ -1,3 +1,6 @@
+@use "../../utils/colors.scss" as c;
+@use "../../utils/mixins.scss" as m;
+
 .medias_container{
   margin: 0 100px;
   display:flex;

@@ -3,6 +3,7 @@
 
 // Pages
 @use "pages/parts/header.scss";
+@use "pages/parts/medias.scss";
 @use "pages/index";
 @use "pages/photographers";
 
@@ -12,3 +13,4 @@
 @use "components/slider.scss";
 @use "components/buttons.scss";
 @use "components/filters.scss";
+@use "components/bar.scss";

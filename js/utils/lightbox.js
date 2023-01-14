@@ -1,3 +1,5 @@
+
+import { ChangeSlide } from "./slider"
 import { setCurrentMedia } from "./slider"
 
 // Modal function : check if modal has class open and add it if not, remove it if this is the case 
@@ -18,6 +20,13 @@ export function lightboxwindow(event) {
       setTimeout(()=>{
         lightbox.className = "lightbox hide"
       },200)
+    }
+    if (event.key === "ArrowRight"){
+      ChangeSlide(1)
+    }
+    // TODO : fix here 
+    if (event.key === "ArrowLeft"){
+      ChangeSlide(-1)
     }
   })
   setCurrentMedia(event)

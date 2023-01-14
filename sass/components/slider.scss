@@ -23,20 +23,15 @@
 		}
 	}
 	.previous{
-		&::before{
-			@include m.sliderbutton{
-				left: 125px;
-				transform: rotate(-135deg);
-			}		
-		}
+		@include m.sliderbutton{
+			left: 125px;
+			transform: rotate(-135deg);
+		}		
 	}
 	.next{
-		&::before{
-			@include m.sliderbutton{
-				right: 125px;
-				transform: rotate(45deg);
-			}		
-		}
+		@include m.sliderbutton{
+			right: 125px;
+			transform: rotate(45deg);
+		}		
 	}
-	
 }

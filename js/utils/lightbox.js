@@ -13,6 +13,18 @@ export function lightboxwindow(event) {
   else{
     lightbox.classList.replace("open","hide")
   }
+  setCurrentMedia(event)
+}
+
+export function init() {
+  const lightboxBtn = document.querySelectorAll(".lightbox-toogle")
+  const lightbox = document.querySelector(".lightbox")
+  
+  lightboxBtn.forEach(
+  (button) => button.addEventListener(
+    "click", (e) => lightboxwindow(e)
+    )
+  )
   document.addEventListener('keyup', function(event){
     // Close modale au moment de l'escape
     if(event.key === "Escape"){
@@ -29,15 +41,5 @@ export function lightboxwindow(event) {
       ChangeSlide(-1)
     }
   })
-  setCurrentMedia(event)
-}
-
-export function init() {
-  const lightboxBtn = document.querySelectorAll(".lightbox-toogle")
-  lightboxBtn.forEach(
-    (button) => button.addEventListener(
-      "click", (e) => lightboxwindow(e)
-      )
-    )
 }
 

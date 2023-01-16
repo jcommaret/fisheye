@@ -25,6 +25,7 @@ export function init() {
     "click", (e) => lightboxwindow(e)
     )
   )
+  
   document.addEventListener('keyup', function(event){
     // Close modale au moment de l'escape
     if(event.key === "Escape"){

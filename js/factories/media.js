@@ -29,7 +29,7 @@ class Image extends Media{
                         <h2 class="media-title">${this.title}</h2>
                         <div class="likes-btn">
                           <div id="count" class="count">${this.likes}
-                            <i class="fa-regular  fa-heart"></i>
+                            <i class="fa-regular  fa-heart" aria-label="likes"></i>
                           </div>
                         </div>
                       </div>`
@@ -52,7 +52,7 @@ export class Video extends Media{
                         <h2 class="media-title">${this.title}</h2>
                         <div class="likes-btn">
                           <div id="count" class="count">${this.likes}
-                            <i class="fa-regular  fa-heart"></i>
+                            <i class="fa-regular fa-heart" aria-label="likes"></i>
                           </div>
                         </div>
                       </div>`

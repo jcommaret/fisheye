@@ -3,6 +3,9 @@
 @use "../animations/hide-show.scss";
 
 .lightbox{
+	h2{
+		display:none;
+	}
 	display:flex;
 	justify-content: center;
 	display: none;

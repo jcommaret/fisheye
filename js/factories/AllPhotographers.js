@@ -16,7 +16,7 @@ export function photographerFactory(data) {
     const picture = `../images/photographers/${portrait}`
 
     function getUserCardDOM() {
-        const article = document.createElement( 'article' )       
+        const article = document.createElement( 'a' )       
         article.addEventListener("click", function () { goTo(id) })
         article.classList.add("article")
         article.setAttribute("tabindex", 0)

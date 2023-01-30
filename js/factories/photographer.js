@@ -34,7 +34,7 @@ class Image extends Media{
               </div>
     
               <div class="contact">
-                <button class="btn btn-contact modal-toogle">
+                <button class="btn btn-contact modal-toogle" aria-label="Contact me">
                   Contactez-moi
                 </button>
               </div>

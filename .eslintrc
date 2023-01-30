@@ -6,7 +6,6 @@
     "parser": "@babel/eslint-parser"
   },
   "rules": {
-    "max-len": [1, 70, 2, {ignoreComments: true}],
     "semi": ["error", "never"]
   }
 }

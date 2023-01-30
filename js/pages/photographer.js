@@ -8,28 +8,37 @@ import * as lightbox from '../utils/lightbox'
 import * as slider from '../utils/slider'
 
 import "../utils/form"
-// import JS functions
+
 import { getMediaById, getPhotographersById } from "../fetch_api"
+
 import { MediaFactory } from "../factories/media"
 import { PhotographerFactory } from "../factories/photographer"
 
 import { Dropdown } from '../utils/dropdown'
-import { CopyPhotographerName} from '../utils/copyPhotographerName'
-import { CopyPrice } from '../utils/copyPhotographerName'
-import { sortbyDate } from '../utils/filters'
-import { sortbyLikes } from '../utils/filters'
-import { sortbyTitle } from '../utils/filters'
+import { CopyPhotographerName, CopyPrice} from '../utils/copyInformations'
+import { sortbyLikes, sortbyDate, sortbyTitle } from '../utils/filters'
 import { getTotalLikes, IncrementLikes } from '../utils/likes'
-// import { IncrementTotalLikes } from '../utils/totalLikes'
 
 // Display medias
 export async function displayMedias(media) {
   const mediasSection = document.querySelector(".medias_section")
-  mediasSection.innerHTML=" " 
+  const AllMediasArray = Array.from(document.querySelectorAll(".media"))
+  
   media.forEach((m) => {
     const type = m.image? "image" : "video"    
     const mediaModel = new MediaFactory(m, type)
-    mediasSection.innerHTML+=mediaModel.render() 
+    // on fabrique un noeud
+    const node = mediaModel.render()  
+    // on cherche si le noeud existe déjà dans le DOM
+    const dom_node = AllMediasArray.find((n_media) => n_media.getAttribute("id") === m.id.toString())
+    if (dom_node) {
+      // déplace le noeud présent en fonction du tri (au tri)
+      mediasSection.appendChild(dom_node)
+    }
+    else{
+      // si il n'y a pas de noeud, il ajoute celui qu'il a fabriqué (au chargement de page) 
+      mediasSection.appendChild(node) 
+    }
   })
 }
 
@@ -48,21 +57,26 @@ export async function displayPhotographer(photographers) {
   slider.init()
 }
 
+// Init
 const init = async () => {
   const id = new URL(document.location).searchParams.get("id")
   const medias = await getMediaById(parseInt(id))
   const photographers = await getPhotographersById(parseInt(id))
+  // Display medias and photographers
   displayMedias(medias)
   displayPhotographer(photographers)
+  // Dropdown
   Dropdown()
+  // Copys
   CopyPhotographerName()
   CopyPrice()
-  getTotalLikes(medias)  
+  // Filters
   sortbyDate(medias)
   sortbyLikes(medias)
   sortbyTitle(medias)
+  // Likes
+  getTotalLikes(medias)  
   IncrementLikes()
-  // IncrementTotalLikes()
 }
 
 init()

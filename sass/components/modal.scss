@@ -93,8 +93,9 @@
 		font-size: 30px;
 		padding: 5px;
 		small{
-			font-size: 12px;
+			font-size: 18px;
 			color:c.$white;
+			font-weight: 900;
 			text-underline-offset: auto;
 		}
 		label {
@@ -123,4 +124,11 @@
 		width: inherit;
 		font-size: 24px;
 	}
+}
+
+textarea{
+  border:none;
+  border-radius:5px;
+  padding:10px;
+  font-family: Arial, Helvetica, sans-serif;
 }

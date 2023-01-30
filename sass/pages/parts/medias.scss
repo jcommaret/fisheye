@@ -1,0 +1,49 @@
+@use "../../utils/colors.scss" as c;
+@use "../../utils/mixins.scss" as m;
+
+.medias_container{
+  margin: 0 100px;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 5px;
+  .medias_section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:20px;
+    margin-top:45px;
+    @include m.desktop{
+    }
+    img, video{
+      display:flex;
+      flex-direction: column;
+      object-fit: cover;
+      height: 300px;
+      width: 100%;
+      background: c.$bck-grey;
+      @include m.desktop{
+        height: 300px;
+        width: 300px;  
+        flex-direction: row;
+      }
+      &.square{
+        object-fit: cover;
+        border-radius: 5px;
+      }
+    }
+    .info{
+      display: flex;
+      justify-content: space-between;
+      h2, p{
+        font-size: 18px;
+        color:c.$red;  
+      }
+      h2{
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+  }
+}

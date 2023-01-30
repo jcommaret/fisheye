@@ -5,12 +5,12 @@ export function getTotalLikes(data){
     totalLikes +=media.likes
   })
   document.querySelector('.compteurLikes').innerHTML = 
-  `${totalLikes} `+ `<i class="fa-solid fa-heart"></i>`
+  `<span class="tLikes">${totalLikes} </span>`+ `<i class="fa-solid fa-heart"></i>`
 }
 
 export function IncrementLikes(){
   // get all likes buttons
-  const hearts = document.querySelectorAll(".likes-btn")
+  let hearts = document.querySelectorAll(".likes-btn")
   // add event listener on each button
   Array.from(hearts).forEach(heart => {
     heart.addEventListener("click", (e)=>{
@@ -26,6 +26,7 @@ export function IncrementLikes(){
         heart.setAttribute("data-like",true)
         nodeLike.innerHTML = 
         `${nbLike} ` + `<i class="fa-solid fa-heart"></i>`
+        updateTotalLikes(1)
       }
       // if the button is liked, remove 1 like and change the icon
       else{
@@ -33,24 +34,14 @@ export function IncrementLikes(){
         heart.removeAttribute("data-like")
         nodeLike.innerHTML = 
         `${nbLike} ` + `<i class="fa-regular fa-heart"></i>`
+        updateTotalLikes(-1)
       }
     })
   })
 }
 
-// TODO:
-
-// Dans l'idée 
-export function IncrementTotalLikes(){
-  const nodeLike = heart.querySelector("#count").textContent
-  const arr = Array.from(nodeLike)
-  console.log(arr)
-  const sum = arr.reduce((accumulator, value) => {
-    return accumulator + value
-  
-  }, 0)
-  console.log(sum)
-  document.querySelector('.compteurLikes').innerHTML = 
-  `${sum} `+ `<i class="fa-solid fa-heart"></i>`
+function updateTotalLikes(like){
+  let totalLikes = document.querySelector('.tLikes').textContent
+  totalLikes = parseInt(totalLikes) + like
+  document.querySelector('.tLikes').innerHTML = totalLikes
 }
-

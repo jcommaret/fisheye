@@ -9,10 +9,10 @@
 
       <div class="window">
          <!-- Modal -->         
-         <div class="modal" aria-hidden="true" role="dialog" aria-describedby="modalTitle">
+         <div class="modal" aria-hidden="true" role="dialog" aria-label="Form Opened" aria-describedby="modalTitle">
             <span tabindex="0"></span>
             <header>
-               <h2 id="modalTitle" class="modal-title"></h2>
+               <h2 id="modalTitle" class="modal-title">Image Close Up View</h2>
                <button class="modal-btn--close modal-toogle fields" tabindex="0">Close modal</button>       
             </header>
 
@@ -42,40 +42,43 @@
                      <small></small>
                   </div>
                
-                  <div>
-                     <input class="btn btn-contact fields" type="submit" tabindex="0"></input>                  
+                  <div>  
+                     <input class="btn btn-contact fields" aria-label="Envoyer" type="submit" tabindex="0"></input>                  
                   </div>
                </form>
             </div>
          </div>  
          <!--End of modal-->
         
-         <!--lightbow-->
-         <div class="lightbox" aria-hidden="true" role="dialog" aria-describedby="lightboxTitle">
+         <!--Lightbox-->
+         <div class="lightbox" aria-hidden="true" role="dialog" aria-label="Image Closeup View" aria-describedby="lightboxTitle">
             <span tabindex="0"></span>
+            <h2 id="lightboxTitle">Lightbox</h2>
             <div class="lightbox-btn--close lightbox-toogle" tabindex="0">Close Lightbox</div>        
             <div class="lightbox-body">
                <div id="slider">
-                  <div class="previous"></div>
+                  <a class="previous" tabindex="0"></a>
                   <div class="slide-container">
                      <div id="slide"></div>
                   </div>
-                  <div class="next"></div>
+                  <a class="next" tabindex="0"></a>
               </div>
               
             </div>
-         </div>  
+         </div>
+         <!--End of lightbox -->  
       </div>
       
       <div id="photographer">
          <!-- Header -->
          <header aria-role="header">
             <a href="index.html" tabindex="0">
-               <img class="header-logo" alt="Logo de Fisheye" tabindex="0" src="images/images/logo.png"/>
+               <img class="header-logo" alt="Fisheye Home Page" tabindex="0" src="images/images/logo.png"/>
             </a>
          </header>
 
          <main class="main-wrapper">
+            <!--Photographer-->
             <section class="photograph">
             </section>
 
@@ -84,23 +87,19 @@
                <div class="filter_section">
                   Trier par
                   <div class="dropdown">
-                     <input class="text-box" id="search-input" type="text" placeholder="Popularité">
+                     <input class="text-box" id="search-input" type="text" placeholder="Popularité" aria-label="Filtrer">
                      <div class="options">
                         <div class="btn likes">Popularité</div>
                         <div class="btn date">Date</div>
                         <div class="btn title">Titre</div>
                      </div>
                   </div>
-               
                </div>
-                              
                <div class="medias_section"></div>
-            
             </section>
-
+            
             <div class="bar">
                <div class="compteurLikes">
-               
                </div>
                <div class="price">
                </div>
@@ -109,6 +108,5 @@
       </div>
       
       <script src="dist/photographers.bundle.js"></script>
-
    </body>
 </html>

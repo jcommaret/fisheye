@@ -1,5 +1,5 @@
 
-import { ChangeSlide } from "./slider"
+import { ChangeSlide, getCards } from "./slider"
 import { setCurrentMedia } from "./slider"
 
 // Modal function : check if modal has class open and add it if not, remove it if this is the case 
@@ -7,8 +7,10 @@ export function lightboxwindow(event) {
   // modal window
   const lightbox = document.querySelector(".lightbox")
   if (!lightbox.classList.contains("open")){
+    
     lightbox.classList.remove("hide")
     lightbox.classList.add("open")
+    getCards()
   }
   else{
     lightbox.classList.replace("open","hide")
@@ -37,7 +39,6 @@ export function init() {
     if (event.key === "ArrowRight"){
       ChangeSlide(1)
     }
-    // TODO : fix here 
     if (event.key === "ArrowLeft"){
       ChangeSlide(-1)
     }

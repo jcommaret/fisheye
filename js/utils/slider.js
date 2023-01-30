@@ -8,7 +8,7 @@ let numero = 0
 
 // Changement de slide
 export function ChangeSlide(sens) {
-  // Changement de slide
+  // Changement de sliden dev
   numero = numero + sens
   // Si on arrive au bout du tableau, on revient au début
   if (numero >= medias.length) {
@@ -61,7 +61,7 @@ function buildMedia(tagName, source, title) {
   }
 }
 
-export function init() {
+export function getCards() {
   // Récupération des médias et des titres dans le DOM
   medias =  Array.from(
     document.querySelectorAll(".media-media")
@@ -69,6 +69,10 @@ export function init() {
   mediasTitle =  Array.from(
     document.querySelectorAll(".media-title")
   )
+}
+
+export function init() {
+  getCards()
   
   // Récupération des boutons next/previous
   const next = document.querySelector(".next")
